@@ -1,0 +1,178 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"-->
+<!--        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">-->
+
+<!--<mapper>-->
+<!--    <resultMap id="BaseResultMap"  tables="help_info">-->
+<!--        <id column="id" langType="int"/>-->
+<!--        <result column="rally_code" langType="string"/>-->
+<!--        <result column="wa_id" langType="string"/>-->
+<!--        <result column="created_at" langType="time.Time"/>-->
+<!--        <result column="updated_at" langType="time.Time"/>-->
+<!--        <result column="help_status" langType="string"/>-->
+<!--        <result column="activity_id" langType="int"/>-->
+<!--    </resultMap>-->
+<!--    <sql id="Base_Column_List">-->
+<!--        id,rally_code,wa_id,created_at,updated_at,help_status,activity_id-->
+<!--    </sql>-->
+
+<!--    <select id="selectByPrimaryKey" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from help_info-->
+<!--        where id = #{id}-->
+<!--    </select>-->
+
+<!--    <delete id="deleteByPrimaryKey" >-->
+<!--        delete-->
+<!--        from help_info-->
+<!--        where id = #{id}-->
+<!--    </delete>-->
+
+<!--    <insert id="insertSelective" >-->
+<!--        insert into help_info-->
+<!--        <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--            <if test="id != nil and id!=0 ">-->
+<!--                id,-->
+<!--            </if>-->
+<!--            <if test="rally_code != nil and rally_code!='' ">-->
+<!--                rally_code,-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                wa_id,-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                created_at,-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                updated_at,-->
+<!--            </if>-->
+<!--            <if test="help_status != nil and help_status!='' ">-->
+<!--                help_status,-->
+<!--            </if>-->
+<!--            <if test="activity_id != nil and activity_id!=0 ">-->
+<!--                activity_id,-->
+<!--            </if>-->
+<!--        </trim>-->
+<!--        <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--            <if test="id != nil and id!=0 ">-->
+<!--                #{id},-->
+<!--            </if>-->
+<!--            <if test="rally_code != nil and rally_code!='' ">-->
+<!--                #{rally_code},-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                #{wa_id},-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                #{created_at.Time},-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                #{updated_at.Time},-->
+<!--            </if>-->
+<!--            <if test="help_status != nil and help_status!='' ">-->
+<!--                #{help_status},-->
+<!--            </if>-->
+<!--            <if test="activity_id != nil and activity_id!=0 ">-->
+<!--                #{activity_id},-->
+<!--            </if>-->
+<!--        </trim>-->
+<!--    </insert>-->
+
+<!--    <update id="updateByPrimaryKeySelective">-->
+<!--        update help_info-->
+<!--        <set>-->
+<!--            <if test="rally_code != nil and rally_code!='' ">-->
+<!--                rally_code = #{rally_code},-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                wa_id = #{wa_id},-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                created_at = #{created_at.Time},-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                updated_at = #{updated_at.Time},-->
+<!--            </if>-->
+<!--            <if test="help_status != nil and help_status!='' ">-->
+<!--                help_status = #{help_status},-->
+<!--            </if>-->
+<!--            <if test="activity_id != nil and activity_id!=0 ">-->
+<!--                activity_id = #{activity_id},-->
+<!--            </if>-->
+<!--            updated_at = CURRENT_TIMESTAMP,-->
+<!--        </set>-->
+<!--        where id = #{id}-->
+<!--    </update>-->
+
+<!--    <select id="CountByRallyCode">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from help_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id} and-->
+<!--        rally_code = #{rally_code}-->
+<!--    </select>-->
+
+<!--    <select id="SelectCountByWaId">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from help_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id} and-->
+<!--        wa_id = #{wa_id}-->
+<!--    </select>-->
+
+<!--    <select id="SelectByWaIdAndActivityId" resultType="dto.HelpCacheDto">-->
+<!--        SELECT-->
+<!--        u.user_nickname AS user_nick_name-->
+<!--        FROM-->
+<!--        help_info h-->
+<!--        JOIN-->
+<!--        user_attend_info u-->
+<!--        ON-->
+<!--        h.rally_code = u.rally_code-->
+<!--        WHERE-->
+<!--        h.wa_id = #{wa_id} and h.activity_id=#{activity_id}-->
+<!--    </select>-->
+
+<!--    <select id="SelectHelpNameByRallyCode" resultType="entity.UserAttendInfoEntity">-->
+<!--        select-->
+<!--        u.id,-->
+<!--        u.wa_id,-->
+<!--        u.user_nickname-->
+<!--        from help_info h-->
+<!--        left join user_attend_info u on h.wa_id = u.wa_id and h.activity_id = u.activity_id-->
+<!--        where-->
+<!--        h.activity_id = #{activity_id} and-->
+<!--        h.rally_code = #{rally_code}-->
+<!--        order by h.created_at-->
+<!--    </select>-->
+
+
+<!--    <select id="CountUserByHelpCount">-->
+<!--        select count(*) as helpNumCount,a.helpNum,b.channel,b.language from-->
+<!--        (-->
+<!--            select-->
+<!--            count(*) as helpNum, h.rally_code-->
+<!--            from-->
+<!--            help_info h-->
+<!--            where-->
+<!--            h.activity_id = #{params.activityId}-->
+<!--            <if test="params.startReportCustomTime != nil and params.startReportCustomTime.IsNotZero ">-->
+<!--                and h.created_at &gt;= #{params.startReportCustomTime.Time}-->
+<!--            </if>-->
+<!--            <if test="params.endReportCustomTime != nil and params.endReportCustomTime.IsNotZero ">-->
+<!--                and h.created_at &lt; #{params.endReportCustomTime.Time}-->
+<!--            </if>-->
+<!--            group by h.rally_code-->
+<!--        ) a-->
+<!--        join-->
+<!--        user_attend_info b on  a.rally_code = b.rally_code-->
+<!--        where-->
+<!--        b.activity_id=#{params.activityId}-->
+<!--        group by b.channel,b.language,a.helpNum-->
+<!--        order by b.channel,b.language,a.helpNum-->
+<!--    </select>-->
+
+<!--</mapper>-->

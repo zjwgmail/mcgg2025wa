@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+
+<mapper>
+    <resultMap id="BaseResultMap"  tables="activity_info">
+        <id column="id" langType="int"/>
+        <result column="activity_name" langType="string"/>
+        <result column="activity_status" langType="string"/>
+        <result column="created_at" langType="time.Time"/>
+        <result column="updated_at" langType="time.Time"/>
+        <result column="start_at" langType="time.Time"/>
+        <result column="end_at" langType="time.Time"/>
+        <result column="end_buffer_day" langType="int"/>
+        <result column="end_buffer_at" langType="time.Time"/>
+        <result column="really_end_at" langType="time.Time"/>
+        <result column="help_max" langType="int"/>
+        <result column="cost_max" langType="float64"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,activity_name,activity_status,created_at,updated_at,start_at,end_at,end_buffer_day,end_buffer_at,really_end_at,help_max,cost_max
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from activity_info
+        where id = #{id}
+    </select>
+
+    <delete id="deleteByPrimaryKey" >
+        delete
+        from activity_info
+        where id = #{id}
+    </delete>
+
+    <insert id="insertSelective" >
+        insert into activity_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!=0 ">
+                id,
+            </if>
+            <if test="activity_name != nil and activity_name!='' ">
+                activity_name,
+            </if>
+            <if test="activity_status != nil and activity_status!='' ">
+                activity_status,
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                created_at,
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                updated_at,
+            </if>
+            <if test="start_at != nil and start_at.IsNotZero ">
+                start_at,
+            </if>
+            <if test="end_at != nil and end_at.IsNotZero ">
+                end_at,
+            </if>
+            <if test="end_buffer_day != nil and end_buffer_day!=0 ">
+                end_buffer_day,
+            </if>
+            <if test="end_buffer_at != nil and end_buffer_at.IsNotZero ">
+                end_buffer_at,
+            </if>
+            <if test="really_end_at != nil and really_end_at.IsNotZero ">
+                really_end_at,
+            </if>
+            <if test="help_max != nil and help_max!=0 ">
+                help_max,
+            </if>
+            <if test="cost_max != nil and cost_max!=0 ">
+                cost_max,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!=0 ">
+                #{id},
+            </if>
+            <if test="activity_name != nil and activity_name!='' ">
+                #{activity_name},
+            </if>
+            <if test="activity_status != nil and activity_status!='' ">
+                #{activity_status},
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                #{created_at.Time},
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                #{updated_at.Time},
+            </if>
+            <if test="start_at != nil and start_at.IsNotZero ">
+                #{start_at.Time},
+            </if>
+            <if test="end_at != nil and end_at.IsNotZero ">
+                #{end_at.Time},
+            </if>
+            <if test="end_buffer_day != nil and end_buffer_day!=0 ">
+                #{end_buffer_day},
+            </if>
+            <if test="end_buffer_at != nil and end_buffer_at.IsNotZero ">
+                #{end_buffer_at.Time},
+            </if>
+            <if test="really_end_at != nil and really_end_at.IsNotZero ">
+                #{really_end_at.Time},
+            </if>
+            <if test="help_max != nil and help_max!=0 ">
+                #{help_max},
+            </if>
+            <if test="cost_max != nil and cost_max!=0 ">
+                #{cost_max},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective">
+        update activity_info
+        <set>
+            <if test="activity_name != nil and activity_name!='' ">
+                activity_name = #{activity_name},
+            </if>
+            <if test="activity_status != nil and activity_status!='' ">
+                activity_status = #{activity_status},
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                created_at = #{created_at.Time},
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                updated_at = #{updated_at.Time},
+            </if>
+            <if test="start_at != nil and start_at.IsNotZero ">
+                start_at = #{start_at.Time},
+            </if>
+            <if test="end_at != nil and end_at.IsNotZero ">
+                end_at = #{end_at.Time},
+            </if>
+            <if test="end_buffer_day != nil and end_buffer_day!=0 ">
+                end_buffer_day = #{end_buffer_day},
+            </if>
+            <if test="end_buffer_at != nil and end_buffer_at.IsNotZero ">
+                end_buffer_at = #{end_buffer_at.Time},
+            </if>
+            <if test="really_end_at != nil and really_end_at.IsNotZero ">
+                really_end_at = #{really_end_at.Time},
+            </if>
+            <if test="help_max != nil and help_max!=0 ">
+                help_max = #{help_max},
+            </if>
+            <if test="cost_max != nil and cost_max!=0 ">
+                cost_max = #{cost_max},
+            </if>
+            updated_at = CURRENT_TIMESTAMP,
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="SelectStatusByPrimaryKey" >
+        select
+        activity_status
+        from activity_info
+        where id = #{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,18 @@
+version: "3"
+services:
+  mcgg2025wa:
+    container_name: "container_mcgg2025wa"
+    image: "prod-mcgg2025wa-web:${TAG}"
+    build:
+      context: .
+      dockerfile: ./container/docker/Dockerfile.prod
+    ports:
+      - 80:80
+  devmcgg2025wa:
+    container_name: "container_dev_mcgg2025wa"
+    image: "dev-mcgg2025wa-web${TAG:-dev}"
+    build:
+      context: .
+      dockerfile: ./container/docker/Dockerfile.dev
+    ports:
+      - 19100:19100

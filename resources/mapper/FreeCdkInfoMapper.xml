@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+<mapper>
+    <resultMap id="BaseResultMap"  tables="free_cdk_info">
+        <id column="id" langType="int"/>
+        <result column="wa_id" langType="string"/>
+        <result column="send_state" langType="int"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,wa_id,send_state
+    </sql>
+
+    <insert id="InsertIgnore">
+        INSERT
+        IGNORE
+        INTO
+        free_cdk_info (wa_id, create_at,send_at)
+        VALUES (#{waId}, #{create_at},#{send_at})
+    </insert>
+    <update id="UpdateStateByWaId">
+        UPDATE
+        free_cdk_info
+        SET
+        send_state = #{sendState}
+        WHERE
+        wa_id = #{waId}
+    </update>
+    <select id="SelectWaIdsByStateLtTimestamp" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        free_cdk_info
+        WHERE
+        send_at &lt;= #{timestamp}
+        and send_state = #{sendState}
+        and id > #{minId}
+        order by id asc
+        limit #{limit}
+    </select>
+</mapper>

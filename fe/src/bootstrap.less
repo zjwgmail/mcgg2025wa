@@ -1,0 +1,360 @@
+.InvitationActivityRulesWrapper{
+  :global{
+    .ruleTitleBox{
+      background: no-repeat 50% 50%;
+      width:100%;
+      margin-top: 180px;
+      margin-bottom: 26px;
+    }
+    .ruleTitleBox02{
+      background-image: url(./assets/images/en/rule-tit.png);
+      background-size: 950px auto;
+      height: 138px;
+    }
+    .ruleTitleBox04{
+      background-image: url(./assets/images/id/rule-tit.png);
+      background-size: 950px auto;
+      height: 138px;
+    }
+    .contentBox{
+      // margin-top: 100px;
+      .activeRuleContentBox{
+        padding-top: 50px;
+      }
+    }
+
+    .prizeTableTitleImg02{
+      background-image: url(./assets/images/en/prize-title.png);
+      background-size: 950px auto;
+      height: 138px;
+    }
+    .prizeTableTitleImg04{
+      background-image: url(./assets/images/id/prize-title.png);
+      background-size: 950px auto;
+      height: 138px;
+    }
+    .prizeTableBox{
+      max-width: 1024px;
+      border: 0;
+      // border-radius: 0;
+      padding: 0;
+      table{
+        width: 100%;
+        height: 100%;
+        font-size: 31px;
+        color: #fff;
+        // background-color: #600515;
+        th, td {
+          text-align: center;
+          padding: 16px 0;
+          border-right: 1px solid #b2aaf5;
+          border-bottom: 1px solid #b2aaf5;
+        }
+      }
+      .th{
+        color:#f3daa8;
+        &:last-child{
+          border-right: 0;
+        }
+      }
+      td{
+        &:last-child{
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.AppContainerWrapper{
+  max-width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: url(./assets/images/head-bg.png), url(./assets/images/body-bg.png), url(./assets/images/foot-bg.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0, 50% 0, 50% 100%;
+  background-size: 100% auto, 100% auto, 100% auto;
+  background-color: var(--primary-color);
+  padding-bottom: 185px;
+  :global{
+    .headerBox{
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 116px 55px 0 55px;
+      .logoBox{
+        height: auto;
+        flex-flow: row nowrap;
+        gap: 0 28px;
+        .mcggLogo{
+          width: 210px;
+          height: 84px;
+          background: url(./assets/images/mcgg-logo.png) no-repeat 50% 50%;
+          background-size: 210px auto;
+        }
+        .mlbbLogo{
+          width: 257px;
+          height: 77px;
+          background: url(./assets/images/mlgg-logo.png) no-repeat 50% 50%;
+          background-size: 257px auto;
+        }
+      }
+      
+      .langSwitchBox{
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 30px;
+        .langBtn{
+          width: 190px;
+          height: 80px;
+          border-radius: 100px;
+          background: var(--lang-btn-bg-color);
+          color: var(--lang-btn-color);
+          font-size: 34px;
+          line-height: 80px;
+        }
+        .active{
+          color: var(--lang-btn-active-color);
+          text-decoration: underline;
+        }
+      }
+    }
+    .bannerBox{
+      background: no-repeat 50% center;
+      background-size: 100% auto;
+      width:100%;
+    }
+    .packageCodeBox{
+      background: no-repeat 50% center;
+      background-size: 100% auto;
+      width:100%;
+      margin-top: 30px;
+      .gameCode{
+        top: 110px; left:480px;
+        z-index: 10;
+        width: 451px;
+        height: 86px;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        color: var(--game-code-color);
+      }
+      .urlLink{
+        top: 160px;
+        left: 100px;
+        width: 880px;
+        height: 160px;
+        // background-color: red;
+      }
+    }
+    .contentBox{
+      max-width: 970px;
+      height: auto;
+      border: 1px solid var(--content-border-color);
+      background-color: var(--content-bg-color);
+      border-radius: 0 40px 0 40px;
+      padding: 0 30px;
+      .titBox{
+        align-items: center;
+        justify-content: center;
+        flex-flow: row nowrap;
+        padding: 60px 0;
+        .iconL, .iconR{
+          background: url(./assets/icons/icon-star-solid.png) no-repeat 50% center;
+          background-size: 82px auto;
+          width: 82px;
+          height: 46px;
+        }
+        .iconR{
+          transform: scale(-1, 1);
+        }
+        .tit{
+          font-size: 46px;
+          color: var(--content-tit-color);
+          padding:0 16px;
+          line-height: 1;
+          text-transform: uppercase;
+        }
+      }
+      .activeRuleContentBox{
+        font-size: 40px;
+        color: var(--content-text-color);
+        .itText{
+          flex-flow: row nowrap;
+          // align-items: center;
+          padding-bottom: 60px;
+          font-size: 40px;
+        }
+        .serial{
+          width: 46px;
+          height: 46px;
+          line-height: 46px;
+          color:#6755f7;
+          background-color: #d9d4fd;
+          border-radius: 100%;
+          transform: translate(0, 4px);
+        }
+        .val{
+          padding-left: 13px;
+          line-height: 1.3;
+          color:#fff;
+          flex: 1;
+          // font-family: 'futuralt-heavy-book';
+        }
+        .itImg{
+          max-width: 880px;
+          // max-height: 100%;
+          object-fit: contain;
+          padding-left: 50px;
+          margin:0 auto;
+        }
+        .goRulePage{
+          color:var(--content-link-color);
+          // background-color: #9d3806;
+          // text-transform: uppercase;
+        }
+      }
+    }
+
+    .codeBoxPopupWrapper{
+      background-color: rgba(0, 0, 0, 0.6);
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+      .codeBoxPopup{
+        width:940px;
+        min-height: 500px;
+        background: url(./assets/images/copy-popup.png) no-repeat 50% 0;
+        background-color: var(--copy-popup-bg-color);
+        background-size: 940px auto;
+        border-radius: 30px;
+        color: var(--game-code-color);
+        .close{
+          width: 50px;
+          height: 50px;
+          right:40px;
+          top:50px;
+        }
+        .popup-title{
+          font-size: 50px;
+          padding: 50px 0 90px;
+        }
+        .popup-content{
+          // width: 500px;
+          // margin:0 auto;
+          font-size: 34px;
+          padding:0 36px 30px;
+          // letter-spacing: 0px;
+          p{
+            padding-bottom: 16px;
+          }
+          .cont-0{
+            font-size: 30px;
+            // letter-spacing: -2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.langStyle02{
+  :global{
+    .bannerBox1{
+      background-image: url(./assets/images/en/head-banner1.png);
+      height: 1153px;
+    }
+    .bannerBox3{
+      background-image: url(./assets/images/en/head-banner.png);
+      height: 951px;
+    }
+    .bannerBox5{
+      background-image: url(./assets/images/en/head-banner2.png);
+      height: 1153px;
+    }
+    .bannerBox8{
+      background-image: url(./assets/images/en/head-banner3.png);
+      height: 951px;
+    }
+    .packageCodeBox1{
+      background-image: url(./assets/images/en/package-code1.png);
+      height: 500px;
+    }
+    .packageCodeBox3{
+      background-image: url(./assets/images/en/package-code.png);
+      height: 500px;
+    }
+    .packageCodeBox5{
+      background-image: url(./assets/images/en/package-code1.png);
+      height: 500px;
+    }
+    .packageCodeBox8{
+      background-image: url(./assets/images/en/package-code.png);
+      height: 500px;
+    }
+    .packageCodeBoxMode1{
+      margin-top: -140px;
+    }
+    .packageCodeBoxMode3{
+      margin-top: 40px;
+    }
+    .packageCodeBoxMode5{
+      margin-top: -140px;
+    }
+    .packageCodeBoxMode8{
+      margin-top: 40px;
+    }
+  }
+}
+.langStyle04{
+  :global{
+    .bannerBox1{
+      background-image: url(./assets/images/id/head-banner1.png);
+      height: 1153px;
+    }
+    .bannerBox3{
+      background-image: url(./assets/images/id/head-banner.png);
+      height: 951px;
+    }
+    .bannerBox5{
+      background-image: url(./assets/images/id/head-banner2.png);
+      height: 1153px;
+    }
+    .bannerBox8{
+      background-image: url(./assets/images/id/head-banner3.png);
+      height: 951px;
+    }
+    .packageCodeBox1{
+      background-image: url(./assets/images/id/package-code1.png);
+      height: 500px;
+    }
+    .packageCodeBox3{
+      background-image: url(./assets/images/id/package-code.png);
+      height: 500px;
+    }
+    .packageCodeBox5{
+      background-image: url(./assets/images/id/package-code1.png);
+      height: 500px;
+    }
+    .packageCodeBox8{
+      background-image: url(./assets/images/id/package-code.png);
+      height: 500px;
+    }
+    .packageCodeBoxMode1{
+      margin-top: -140px;
+    }
+    .packageCodeBoxMode3{
+      margin-top: 40px;
+    }
+    .packageCodeBoxMode5{
+      margin-top: -140px;
+    }
+    .packageCodeBoxMode8{
+      margin-top: 40px;
+    }
+  }
+}

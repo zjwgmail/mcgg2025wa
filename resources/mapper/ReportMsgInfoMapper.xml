@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+
+<mapper>
+    <resultMap id="BaseResultMap"  tables="report_msg_info">
+        <id column="id" langType="string"/>
+        <result column="date" langType="string"/>
+        <result column="hour" langType="string"/>
+        <result column="report_type" langType="string"/>
+        <result column="msg_status" langType="string"/>
+        <result column="msg" langType="string"/>
+        <result column="count_msg" langType="string"/>
+        <result column="res" langType="string"/>
+        <result column="created_at" langType="time.Time"/>
+        <result column="updated_at" langType="time.Time"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,date,hour,report_type,msg_status,msg,count_msg,res,created_at,updated_at
+    </sql>
+
+<!--    <select id="selectByPrimaryKey" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from report_msg_info-->
+<!--        where id = #{id}-->
+<!--    </select>-->
+
+    <delete id="deleteByPrimaryKey" >
+        delete
+        from report_msg_info
+        where id = #{id}
+    </delete>
+
+    <insert id="insertSelective" >
+        insert into report_msg_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!='' ">
+                id,
+            </if>
+            <if test="date != nil and date!='' ">
+                date,
+            </if>
+            <if test="hour != nil and hour!='' ">
+                hour,
+            </if>
+            <if test="report_type != nil and report_type!='' ">
+                report_type,
+            </if>
+            <if test="msg_status != nil and msg_status!='' ">
+                msg_status,
+            </if>
+            <if test="msg != nil and msg!='' ">
+                msg,
+            </if>
+            <if test="count_msg != nil and count_msg!='' ">
+                count_msg,
+            </if>
+            <if test="res != nil and res!='' ">
+                res,
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                created_at,
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                updated_at,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!='' ">
+                #{id},
+            </if>
+            <if test="date != nil and date!='' ">
+                #{date},
+            </if>
+            <if test="hour != nil and hour!='' ">
+                #{hour},
+            </if>
+            <if test="report_type != nil and report_type!='' ">
+                #{report_type},
+            </if>
+            <if test="msg_status != nil and msg_status!='' ">
+                #{msg_status},
+            </if>
+            <if test="msg != nil and msg!='' ">
+                #{msg},
+            </if>
+            <if test="count_msg != nil and count_msg!='' ">
+                #{count_msg},
+            </if>
+            <if test="res != nil and res!='' ">
+                #{res},
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                #{created_at.Time},
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                #{updated_at.Time},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective">
+        update report_msg_info
+        <set>
+            <if test="date != nil and date!='' ">
+                date = #{date},
+            </if>
+            <if test="hour != nil and hour!='' ">
+                hour = #{hour},
+            </if>
+            <if test="report_type != nil and report_type!='' ">
+                report_type = #{report_type},
+            </if>
+            <if test="msg_status != nil and msg_status!='' ">
+                msg_status = #{msg_status},
+            </if>
+            <if test="msg != nil and msg!='' ">
+                msg = #{msg},
+            </if>
+            <if test="count_msg != nil and count_msg!='' ">
+                count_msg = #{count_msg},
+            </if>
+            <if test="res != nil and res!='' ">
+                res = #{res},
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                created_at = #{created_at.Time},
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                updated_at = #{updated_at.Time},
+            </if>
+            updated_at = CURRENT_TIMESTAMP,
+        </set>
+        where id = #{id}
+    </update>
+
+
+    <select id="SelectListByReportType" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List"/>
+        from report_msg_info
+        where
+        report_type = #{report_type}
+        order by created_at
+    </select>
+
+
+<!--    <select id="SelectDays" resultType="string">-->
+<!--        select-->
+<!--        date-->
+<!--        from report_msg_info-->
+<!--        group by date-->
+<!--    </select>-->
+
+
+    <select id="SelectCountByReportTypeAndDay">
+        select
+        count(*)
+        from report_msg_info
+        where
+        report_type = #{report_type}
+        and date = #{month_day}
+    </select>
+
+</mapper>

@@ -1,0 +1,33 @@
+{
+  "name": "youziblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./node_modules/crootfast-webpack/scripts/run.js --frame=react --env=dev",
+    "build": "node ./node_modules/crootfast-webpack/scripts/build.js --frame=react --env=prod",
+    "lint": "npm run lint-wrapper --frame=react",
+    "lint-wrapper": "npx eslint ./src --fix --ext .js,.jsx --config ./node_modules/crootfast-webpack/.eslintrc.js",
+    "upload": "sh ./container/shell/buildUpload.sh"
+  },
+  "keywords": [
+    "yui",
+    "reactui",
+    "react",
+    "antd"
+  ],
+  "author": "youzi",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/icons": "5.3.7",
+    "ahooks": "3.7.8",
+    "antd-mobile": "5.37.1",
+    "lodash-es": "4.17.21",
+    "jsencrypt": "3.3.2",
+    "postcss-pxtorem": "6.1.0"
+  },
+  "devDependencies": {
+    "crootfast-webpack": "^0.3.8"
+  }
+}

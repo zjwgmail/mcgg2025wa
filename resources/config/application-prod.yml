@@ -1,0 +1,184 @@
+settings:
+  application:
+    # 服务名称
+    name: prod-mcgg2025wa-server
+    isDebug: false
+    isActivityServer: true
+    # 服务器ip，默认使用 0.0.0.0
+    host: 0.0.0.0
+    # 端口号
+    port: 9000 # 服务端口号
+    timer:
+      recallCdkTask:  #cdk补发
+        timerCorn: "6,26,56 * * * *"
+      recallClusteringTask: #3小时催促成团
+        timerCorn: "0,24,44 * * * *"
+      recallFreeTask: #22小时续免费
+        timerCorn: "5,34,53 * * * *"
+      #      recallPayFreeMsgTask: #付费召回
+      #        timerCorn: "7,48 * * * *"
+#      costTask: #统计消息费用
+#        timerCorn: "*/5 * * * *"
+      activityTask: #变更活动状态
+        timerCorn: "*/3 * * * *"
+      resendMsgTask:
+        timerCorn: "20,50 * * * *"
+#      cdkNumTask:
+#        timerCorn: "8,23,38,53 * * * *"
+#      reportTaskUTC0:
+#        timerCorn: "0 0 * * *"
+      reportTaskUTC8:
+        timerCorn: "1 0 * * *"
+#      reportTaskUTCMinus8:
+#        timerCorn: "0 0 * * *"
+#      freeCdkSend:
+#        timerCorn: "0 * * * *"
+    redis:
+      MaxIdle: 30
+      MaxActive: 30
+      IdleTimeout: 600
+      Address:
+      Password:
+      Database: 9 #todo线上使用9
+      Username:
+    datasource:
+      DriverName: mysql
+      #DataSourceLink: root:root@tcp(127.0.0.1:3306)/fission_activity?parseTime=true
+      DataSourceLink:
+      MaxIdleCount: 6
+      MaxOpen: 6
+      MaxLifetime: 1000
+      MaxIdleTime: 1000
+      XmlPrefix: resources/mapper/
+      LogEnable: true
+    s3Config:
+      PreSignUrl:
+      Bucket: outweb-mc-whatapps-act20241011
+      DonAmin: https://akmweb.outweb.mc-gogo.com/
+    nx:
+      ak:
+      sk:
+      appKey: ETrw2BEq
+      businessPhone: '6285873165264'
+      # todo 正式上线修改
+      isVerifySign: false
+    MethodInsertMsgInfo:
+      "winNormal":
+        userAttendPrefixList:
+          - "我要参加Magic Chess GOGO预约活动，赢手机、现金、MLBB永久皮肤和MCGG钻石等奖励。\n我的参与码是："
+          - "I'm joining the Magic Chess: Go Go pre-registration event to win a phone, cash, a permanent MLBB Skin, and MCGG Diamonds!\nUse my Code: " #英语
+          - "Aku ikutan event Magic Chess: Go Go buat menangin HP, uang tunai, Skin MLBB permanen, dan Diamond MCGG!\nKodeku: " #印尼语
+        userAttendOfHelpPrefixList:
+          - "的队伍，一起组队预约MCGG赢永久皮肤、vivo手机等大奖！\n参与码："
+          - "'s team! Let’s pre-register for MCGG together and win permanent skins, Vivo phones, and other grand prizes!\nUse Code: "
+          - "Ayo praregistrasi MCGG bareng buat menangin skin permanen, HP vivo dan hadiah utama lainnya!\nKodeku: "
+        renewFreePrefixList:
+          - "续订活动消息"
+          - "Resubscribe"
+          - "Langganan Pesan"
+          - "继续参与活动"
+          - "Continue event"
+          - "Teruskan Sertai"
+    wa:
+      mcggShortProject: mc-gogo
+      mcggShortLinkGenUrl: https://share.mc-gogo.com/shorturl
+      mcggShortLinkPrefix: https://share.mc-gogo.com/
+      mcggShortLinkSignKey: e9bmbtu8z9xos1edrqiwgvttnlaabkx7
+      mlbbShortProject: mlbb
+      mlbbShortLinkGenUrl: https://s.mobilelegends.com/shorturl
+      mlbbShortLinkPrefix: https://s.mobilelegends.com/
+      mlbbShortLinkSignKey: HVQSPTbEtzHuvArnpmI3dZWR1TYVvF0T
+    feishu:
+      webHook: https://open.feishu.cn/open-apis/bot/v2/hook/abf493f8-ac6e-4fee-be10-e28453f8bcca
+    emailConfig:
+      serverHost: smtp.sendcloud.net
+      serverPort: 587
+      fromAddress: whatsapp-data@mlmy.mobilelegends.com
+      apiUser: outweb-mlmy-act
+      apiKey: 44d3770a48fdc99fd0f7f138bd3b19e0
+      toAddressList:
+        - junhuizhang@moonton.com
+        - raymondlin@moonton.com
+        - zjwmsg@163.com
+    activity:
+      id: 1
+      name: MCGG2025WA
+      scheme: "winNormal"
+      needSubscribe: true
+      languageList:
+        - "04"
+      languageNameMap:
+        "04": "印尼"
+        "Other": "去重合并多语言"
+      channelList:
+        - "a"
+        - "b"
+        - "c"
+        - "d"
+        - "e"
+        - "f"
+        - "g"
+        - "h"
+        - "i"
+        - "j"
+      channelNameMap:
+        "a": "端内-128通路"
+        "b": "端内-邮件推送"
+        "c": "端内-任务达人"
+        "d": "端外-FB"
+        "e": "端外-INS"
+        "f": "端外-UA加热"
+        "g": "端外-备用1"
+        "h": "端外-备用2"
+        "i": "端外-备用3"
+        "j": "端外-备用4"
+        "Other": "去重合并多渠道"
+      helpTextList:
+        - id: "1"
+          bodyText:
+            "winNormal":
+              "01": "Hi，拜托帮我点一下助力，预约Magic Chess: Go Go，由MLBB原班人马打造的全新自走棋游戏💪，赢取MLBB永久皮肤、手机和10 juta rupiah现金等丰富奖励！🎉\n\n帮忙点一下，大奖就在眼前哦～\n👉{{1}}"
+              "02": "Hi! Please assist me by tapping to pre-register for Magic Chess: Go Go — a brand-new auto battler game created by the original MLBB team 💪! You could win amazing rewards, including a permanent MLBB Skin, a phone, and 10 juta rupiah cash! 🎉\n\nJust one tap and you stand a chance to win amazing prizes!\n👉{{1}}"
+              "04": "Halo! Yuk bantu aku dengan praregistrasi Magic Chess: Go Go, game Auto Battle baru yang dibuat tim asli MLBB💪! Menangkan hadiah menarik seperti Skin MLBB permanen, HP, dan uang tunai 10 juta rupiah! 🎉\n\nCuma sekali klik dan hadiah ini bisa jadi milikmu!\n👉{{1}}"
+          weight: 100
+      unRedPacketMinute: 300
+      sendRedPacketMinute: 180
+      twoStartGroupMinute: 300
+      stage1Award:
+        helpNum: 3
+        awardName:
+          "01": "，赢MCGG永久指挥官，并抽2 juta rupiah现金奖励"
+          "02": " friends to win a permanent Commander in MCGG and get a chance to win 2 juta rupiah cash reward"
+          "04": " buat menangin Commander Permanen di MCGG dan dapatin kesempatan menang hadiah uang tunai 2 juta rupiah"
+        awardLink:
+          "01": https://play.mc-gogo.com/events/mcgg2025wa/promotion/?lang=01&?code={{1}}&mode=3&gpt=10&lp=01&cdk={{2}}&lang={{3}}&channel={{4}}
+          "02": https://play.mc-gogo.com/events/mcgg2025wa/promotion/?lang=02&code={{1}}&mode=3&gpt=10&lp=01&cdk={{2}}&lang={{3}}&channel={{4}}
+          "04": https://play.mc-gogo.com/events/mcgg2025wa/promotion/?lang=04&code={{1}}&mode=3&gpt=10&lp=01&cdk={{2}}&lang={{3}}&channel={{4}}
+      stage2Award:
+        helpNum: 5
+        awardName:
+          "01": "，最高可获得MLBB永久皮肤，并可参加抽取vivo手机！"
+          "02": " friends to secure a guaranteed MLBB permanent Skin and enter the Vivo phone draw!"
+          "04": " buat berkesempatan dapat skin permanen MLBB dan ikutan undian HP vivo!"
+        awardLink:
+          "01": https://play.mc-gogo.com/events/mcgg2025wa/promotion/?lang=01&code={{1}}&mode=5&gpt=10&lp=01&cdk={{2}}&lang={{3}}&channel={{4}}
+          "02": https://play.mc-gogo.com/events/mcgg2025wa/promotion/?lang=02&code={{1}}&mode=5&gpt=10&lp=01&cdk={{2}}&lang={{3}}&channel={{4}}
+          "04": https://play.mc-gogo.com/events/mcgg2025wa/promotion/?lang=04&code={{1}}&mode=5&gpt=10&lp=01&cdk={{2}}&lang={{3}}&channel={{4}}
+      stage3Award:
+        helpNum: 8
+        awardName:
+          "01": "助力，赢MCGG珍贵钻石，还有机会获得vivo手机！"
+          "02": " to get valuable MCGG Diamonds and enter the Vivo phone draw!"
+          "04": " buat bantu kamu menangin Diamond MCGG dan dapatin kesempatan menangin HP vivo!"
+        awardLink:
+          "01": https://play.mc-gogo.com/events/mcgg2025wa/promotion/?lang=01&code={{1}}&mode=8&gpt=10&lp=01&cdk={{2}}&lang={{3}}&channel={{4}}
+          "02": https://play.mc-gogo.com/events/mcgg2025wa/promotion/?lang=02&code={{1}}&mode=8&gpt=10&lp=01&cdk={{2}}&lang={{3}}&channel={{4}}
+          "04": https://play.mc-gogo.com/events/mcgg2025wa/promotion/?lang=04&code={{1}}&mode=8&gpt=10&lp=01&cdk={{2}}&lang={{3}}&channel={{4}}
+      waIdPrefixList:
+        - "62"
+      insertOtherRsvMsgTable: rsv_other_msg_info_1
+      freeCdkSendDelayHour: 0
+      WaRedirectListPrefix: https://wa.me/?lang={{1}}&channel={{2}}&generation={{3}}&text=
+    rsa:
+      privateKey: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAJxuxztfXLfGfsG8Ev9sMI6p+eDK0G+fyam+BmQ60QxwIs+Zm7XjkFifTU65nsdB1vq0ruft3n/Lntq/NnImICxUZHfjoVpTYCa+g2J6gn3oroaWcoejwKADILAXd1XGnpN8hQfAazhnrmbvdfJe+tspZb4Eicordegb+pt3F1ulAgMBAAECgYAg7r1oxXG6isJCvPpu5XLvhd9CMNBiv4vv/T5ROYSrDqx1cgwy5Z6M2bSnvzIrFrRQgVtVHmG6G77spFas/1PES+evxGOV5AlXbyck2EwsRIKkIVOkUTAZwUDobF1z9eawDy54W1ko7uRIIDZIMJldSETSWfaKjBs5fwp5jxqb3QJBAOzGq3iVwYEiukyj50NcmKg63M2OEcO21urPTRrePd4zxJG4TrBapB3UT7Px9/InKkPtpdchiEvucdQfuGft3DMCQQCpIjFayOftXNi9YU8aQghYPZ6wiMT6LJOmlWCWjJTZW3bXFbBTqzDaQnYAQzuz9KC98g/Zq++D33TBF6SE2hDHAkEAwF7RZdFWPBL5BdeMx1/t75CTYLZynG5qwq/WV2QFJAkvRa1W0VVzTYD3mJ2Y8zb60eG9AcKOuBJsjQmQi2/nnQJALnycbiR8QqxbUioV0NTHcGF3ZXQiF9T6vDWgd6CqJNfT4Sgv779EzSipQEc6eKrLJ4oJuz1btrZLY+s4p9877wJBAMRM/E56TUPMedcOo7krWi/Rc4jfNWb0FFErNXJO6EEX+LmneUXF+zYqvGWjnC1SxqkYw7rCo+QwHu4lL5CEjMM=
+      publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcbsc7X1y3xn7BvBL/bDCOqfngytBvn8mpvgZkOtEMcCLPmZu145BYn01OuZ7HQdb6tK7n7d5/y57avzZyJiAsVGR346FaU2AmvoNieoJ96K6GlnKHo8CgAyCwF3dVxp6TfIUHwGs4Z65m73XyXvrbKWW+BInKK3XoG/qbdxdbpQIDAQAB

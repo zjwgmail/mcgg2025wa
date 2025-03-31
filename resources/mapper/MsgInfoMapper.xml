@@ -1,0 +1,341 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"-->
+<!--        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">-->
+
+<!--<mapper>-->
+<!--    <resultMap id="BaseResultMap"  tables="msg_info">-->
+<!--        <id column="id" langType="string"/>-->
+<!--        <result column="type" langType="string"/>-->
+<!--        <result column="msg" langType="string"/>-->
+<!--        <result column="msg_status" langType="string"/>-->
+<!--        <result column="wa_id" langType="string"/>-->
+<!--        <result column="currency" langType="string"/>-->
+<!--        <result column="price" langType="float64"/>-->
+<!--        <result column="foreign_price" langType="float64"/>-->
+<!--        <result column="wa_message_id" langType="string"/>-->
+<!--        <result column="created_at" langType="time.Time"/>-->
+<!--        <result column="updated_at" langType="time.Time"/>-->
+<!--        <result column="is_count" langType="int8"/>-->
+<!--        <result column="activity_id" langType="int"/>-->
+<!--        <result column="msg_type" langType="string"/>-->
+<!--        <result column="source_wa_id" langType="string"/>-->
+<!--        <result column="receive_msg" langType="string"/>-->
+<!--        <result column="trace_id" langType="string"/>-->
+<!--        <result column="send_res" langType="string"/>-->
+<!--        <result column="build_msg_params" langType="string"/>-->
+<!--    </resultMap>-->
+<!--    <sql id="Base_Column_List">-->
+<!--        id,type,msg,msg_status,wa_id,currency,price,foreign_price,wa_message_id,created_at,updated_at,is_count,activity_id,msg_type,source_wa_id,receive_msg,trace_id,send_res,build_msg_params-->
+<!--    </sql>-->
+
+<!--    <select id="selectByPrimaryKey" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from msg_info-->
+<!--        where id = #{id}-->
+<!--    </select>-->
+
+<!--    <delete id="deleteByPrimaryKey" >-->
+<!--        delete-->
+<!--        from msg_info-->
+<!--        where id = #{id}-->
+<!--    </delete>-->
+
+<!--    <insert id="insertSelective" >-->
+<!--        insert into msg_info-->
+<!--        <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--            <if test="id != nil and id!='' ">-->
+<!--                id,-->
+<!--            </if>-->
+<!--            <if test="type != nil and type!='' ">-->
+<!--                type,-->
+<!--            </if>-->
+<!--            <if test="msg != nil and msg!='' ">-->
+<!--                msg,-->
+<!--            </if>-->
+<!--            <if test="msg_status != nil and msg_status!='' ">-->
+<!--                msg_status,-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                wa_id,-->
+<!--            </if>-->
+<!--            <if test="currency != nil and currency!='' ">-->
+<!--                currency,-->
+<!--            </if>-->
+<!--            <if test="price != nil and price!=0 ">-->
+<!--                price,-->
+<!--            </if>-->
+<!--            <if test="foreign_price != nil and foreign_price!=0 ">-->
+<!--                foreign_price,-->
+<!--            </if>-->
+<!--            <if test="wa_message_id != nil and wa_message_id!='' ">-->
+<!--                wa_message_id,-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                created_at,-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                updated_at,-->
+<!--            </if>-->
+<!--            <if test="is_count != nil and is_count!=0 ">-->
+<!--                is_count,-->
+<!--            </if>-->
+<!--            <if test="activity_id != nil and activity_id!=0 ">-->
+<!--                activity_id,-->
+<!--            </if>-->
+<!--            <if test="msg_type != nil and msg_type!='' ">-->
+<!--                msg_type,-->
+<!--            </if>-->
+<!--            <if test="source_wa_id != nil and source_wa_id!='' ">-->
+<!--                source_wa_id,-->
+<!--            </if>-->
+<!--            <if test="receive_msg != nil and receive_msg!='' ">-->
+<!--                receive_msg,-->
+<!--            </if>-->
+<!--            <if test="trace_id != nil and trace_id!='' ">-->
+<!--                trace_id,-->
+<!--            </if>-->
+<!--            <if test="send_res != nil and send_res!='' ">-->
+<!--                send_res,-->
+<!--            </if>-->
+<!--            <if test="build_msg_params != nil and build_msg_params!='' ">-->
+<!--                build_msg_params,-->
+<!--            </if>-->
+<!--        </trim>-->
+<!--        <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--            <if test="id != nil and id!='' ">-->
+<!--                #{id},-->
+<!--            </if>-->
+<!--            <if test="type != nil and type!='' ">-->
+<!--                #{type},-->
+<!--            </if>-->
+<!--            <if test="msg != nil and msg!='' ">-->
+<!--                #{msg},-->
+<!--            </if>-->
+<!--            <if test="msg_status != nil and msg_status!='' ">-->
+<!--                #{msg_status},-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                #{wa_id},-->
+<!--            </if>-->
+<!--            <if test="currency != nil and currency!='' ">-->
+<!--                #{currency},-->
+<!--            </if>-->
+<!--            <if test="price != nil and price!=0 ">-->
+<!--                #{price},-->
+<!--            </if>-->
+<!--            <if test="foreign_price != nil and foreign_price!=0 ">-->
+<!--                #{foreign_price},-->
+<!--            </if>-->
+<!--            <if test="wa_message_id != nil and wa_message_id!='' ">-->
+<!--                #{wa_message_id},-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                #{created_at.Time},-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                #{updated_at.Time},-->
+<!--            </if>-->
+<!--            <if test="is_count != nil and is_count!=0 ">-->
+<!--                #{is_count},-->
+<!--            </if>-->
+<!--            <if test="activity_id != nil and activity_id!=0 ">-->
+<!--                #{activity_id},-->
+<!--            </if>-->
+<!--            <if test="msg_type != nil and msg_type!='' ">-->
+<!--                #{msg_type},-->
+<!--            </if>-->
+<!--            <if test="source_wa_id != nil and source_wa_id!='' ">-->
+<!--                #{source_wa_id},-->
+<!--            </if>-->
+<!--            <if test="receive_msg != nil and receive_msg!='' ">-->
+<!--                #{receive_msg},-->
+<!--            </if>-->
+<!--            <if test="trace_id != nil and trace_id!='' ">-->
+<!--                #{trace_id},-->
+<!--            </if>-->
+<!--            <if test="send_res != nil and send_res!='' ">-->
+<!--                #{send_res},-->
+<!--            </if>-->
+<!--            <if test="build_msg_params != nil and build_msg_params!='' ">-->
+<!--                #{build_msg_params},-->
+<!--            </if>-->
+<!--        </trim>-->
+<!--    </insert>-->
+
+<!--    <update id="updateByPrimaryKeySelective">-->
+<!--        update msg_info-->
+<!--        <set>-->
+<!--            <if test="type != nil and type!='' ">-->
+<!--                type = #{type},-->
+<!--            </if>-->
+<!--            <if test="msg != nil and msg!='' ">-->
+<!--                msg = #{msg},-->
+<!--            </if>-->
+<!--            <if test="msg_status != nil and msg_status!='' ">-->
+<!--                msg_status = #{msg_status},-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                wa_id = #{wa_id},-->
+<!--            </if>-->
+<!--            <if test="currency != nil and currency!='' ">-->
+<!--                currency = #{currency},-->
+<!--            </if>-->
+<!--            <if test="price != nil and price!=0 ">-->
+<!--                price = #{price},-->
+<!--            </if>-->
+<!--            <if test="foreign_price != nil and foreign_price!=0 ">-->
+<!--                foreign_price = #{foreign_price},-->
+<!--            </if>-->
+<!--            <if test="wa_message_id != nil and wa_message_id!='' ">-->
+<!--                wa_message_id = #{wa_message_id},-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                created_at = #{created_at.Time},-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                updated_at = #{updated_at.Time},-->
+<!--            </if>-->
+<!--            <if test="is_count != nil and is_count!=0 ">-->
+<!--                is_count = #{is_count},-->
+<!--            </if>-->
+<!--            <if test="activity_id != nil and activity_id!=0 ">-->
+<!--                activity_id = #{activity_id},-->
+<!--            </if>-->
+<!--            <if test="msg_type != nil and msg_type!='' ">-->
+<!--                msg_type = #{msg_type},-->
+<!--            </if>-->
+<!--            <if test="source_wa_id != nil and source_wa_id!='' ">-->
+<!--                source_wa_id = #{source_wa_id},-->
+<!--            </if>-->
+<!--            <if test="receive_msg != nil and receive_msg!='' ">-->
+<!--                receive_msg = #{receive_msg},-->
+<!--            </if>-->
+<!--            <if test="trace_id != nil and trace_id!='' ">-->
+<!--                trace_id = #{trace_id},-->
+<!--            </if>-->
+<!--            <if test="send_res != nil and send_res!='' ">-->
+<!--                send_res = #{send_res},-->
+<!--            </if>-->
+<!--            <if test="build_msg_params != nil and build_msg_params!='' ">-->
+<!--                build_msg_params = #{build_msg_params},-->
+<!--            </if>-->
+<!--            updated_at = CURRENT_TIMESTAMP,-->
+<!--        </set>-->
+<!--        where id = #{id}-->
+<!--    </update>-->
+
+<!--    <select id="SumSendPriceMsg">-->
+<!--        select-->
+<!--        COALESCE(SUM(foreign_price), 0.0)-->
+<!--        from msg_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and type = 'send'-->
+<!--        and foreign_price > 0-->
+<!--    </select>-->
+
+
+<!--    <select id="SumPriceSendUnCountMsg">-->
+<!--        select-->
+<!--        COALESCE(SUM(foreign_price), 0.0)-->
+<!--        from msg_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and type = 'send'-->
+<!--        and foreign_price > 0-->
+<!--        <if test="un_counted != nil and un_counted!=0 ">-->
+<!--            and is_count = #{un_counted}-->
+<!--        </if>-->
+<!--    </select>-->
+
+<!--    <update id="UpdateCountOfSendUnCount">-->
+<!--        update-->
+<!--        msg_info-->
+<!--        set-->
+<!--        is_count = #{counted}-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and type = 'send'-->
+<!--        and msg_status = 'sent'-->
+<!--        and is_count = #{un_counted}-->
+<!--    </update>-->
+
+<!--    <select id="SelectWaIdListOfUnSendMsg" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        wa_id-->
+<!--        from msg_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and type = 'send'-->
+<!--        and msg_status in ('owner_un_send','failed')-->
+<!--        group by wa_id-->
+<!--    </select>-->
+
+<!--    <select id="SelectWaIdListOfUnSendMsgWithPagination" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        wa_id-->
+<!--        from msg_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and type = 'send'-->
+<!--        and msg_status in ('owner_un_send','failed')-->
+<!--        group by wa_id-->
+<!--        order by wa_id-->
+<!--        limit #{limit} offset #{offset}-->
+<!--    </select>-->
+
+
+<!--    <select id="SelectMsgListOfUnSendMsg" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from msg_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and wa_id = #{wa_id}-->
+<!--        and type = 'send'-->
+<!--        and msg_status in ('owner_un_send','failed')-->
+<!--        order by created_at-->
+<!--    </select>-->
+
+<!--    <select id="CountCdkMsgByWaId">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from msg_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and wa_id = #{wa_id}-->
+<!--        and type = 'send'-->
+<!--        and msg_type = #{msg_type}-->
+<!--    </select>-->
+
+<!--    <select id="SelectByWaMessageId" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from msg_info-->
+<!--        where wa_message_id = #{wa_message_id}-->
+<!--    </select>-->
+
+<!--    <select id="CountReFreeMsgByPrice">-->
+<!--        select-->
+<!--        count(*) as count,-->
+<!--        #{params.msgType} as msgType,-->
+<!--        b.channel,b.language-->
+<!--        from msg_info m-->
+<!--        join-->
+<!--        user_attend_info b on  m.wa_id = b.wa_id-->
+<!--        where-->
+<!--        m.activity_id = #{params.activityId}-->
+<!--        and m.type = 'send'-->
+<!--        and m.msg_status = 'sent'-->
+<!--        and m.msg_type = #{params.msgType}-->
+<!--        <if test="params.startReportCustomTime != nil and params.startReportCustomTime.IsNotZero ">-->
+<!--            and m.created_at &gt;= #{params.startReportCustomTime.Time}-->
+<!--        </if>-->
+<!--        <if test="params.endReportCustomTime != nil and params.endReportCustomTime.IsNotZero ">-->
+<!--            and m.created_at &lt; #{params.endReportCustomTime.Time}-->
+<!--        </if>-->
+<!--        and b.activity_id=#{params.activityId}-->
+<!--        group by b.channel,b.language-->
+<!--    </select>-->
+<!--</mapper>-->

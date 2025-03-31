@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+
+<mapper>
+    <resultMap id="BaseResultMap"  tables="rsv_other_msg_info_1">
+        <id column="id" langType="int"/>
+        <result column="msg" langType="string"/>
+        <result column="wa_id" langType="string"/>
+        <result column="created_at" langType="time.Time"/>
+        <result column="updated_at" langType="time.Time"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,msg,wa_id,created_at,updated_at
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ${table_name}
+        where id = #{id}
+    </select>
+
+    <insert id="insertSelective" >
+        insert into ${table_name}
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!=0 ">
+                id,
+            </if>
+            <if test="msg != nil and msg!='' ">
+                msg,
+            </if>
+            <if test="wa_id != nil and wa_id!='' ">
+                wa_id,
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                  created_at,
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                  updated_at,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!=0 ">
+                #{id},
+            </if>
+            <if test="msg != nil and msg!='' ">
+                #{msg},
+            </if>
+            <if test="wa_id != nil and wa_id!='' ">
+                #{wa_id},
+            </if>
+             <if test="created_at != nil and created_at.IsNotZero ">
+                 #{created_at.Time},
+             </if>
+             <if test="updated_at != nil and updated_at.IsNotZero ">
+                 #{updated_at.Time},
+             </if>
+        </trim>
+    </insert>
+
+    <insert id="insertSelective2" >
+        insert into ${table_name}
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!=0 ">
+                id,
+            </if>
+            <if test="msg != nil and msg!='' ">
+                msg,
+            </if>
+            <if test="wa_id != nil and wa_id!='' ">
+                wa_id,
+            </if>
+            <if test="timestamp!=0 ">
+                timestamp,
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                created_at,
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                updated_at,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!=0 ">
+                #{id},
+            </if>
+            <if test="msg != nil and msg!='' ">
+                #{msg},
+            </if>
+            <if test="wa_id != nil and wa_id!='' ">
+                #{wa_id},
+            </if>
+            <if test="timestamp!=0 ">
+                #{timestamp},
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                #{created_at.Time},
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                #{updated_at.Time},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective">
+        update ${table_name}
+        <set>
+            <if test="msg != nil and msg!='' ">
+                msg = #{msg},
+            </if>
+            <if test="wa_id != nil and wa_id!='' ">
+                wa_id = #{wa_id},
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+              created_at = #{created_at.Time},
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+              updated_at = #{updated_at.Time},
+            </if>
+            updated_at = CURRENT_TIMESTAMP,
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="executeSql" resultType="map">
+        ${sql}
+    </select>
+
+</mapper>

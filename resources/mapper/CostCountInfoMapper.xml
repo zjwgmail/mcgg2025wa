@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+
+<mapper>
+    <resultMap id="BaseResultMap"  tables="cost_count_info">
+        <id column="id" langType="int"/>
+        <result column="cost_count" langType="float64"/>
+        <result column="created_at" langType="time.Time"/>
+        <result column="updated_at" langType="time.Time"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,cost_count,created_at,updated_at
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from cost_count_info
+        where id = #{id}
+    </select>
+
+    <delete id="deleteByPrimaryKey" >
+        delete
+        from cost_count_info
+        where id = #{id}
+    </delete>
+
+    <insert id="insertSelective" >
+        insert into cost_count_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!=0 ">
+                id,
+            </if>
+            <if test="cost_count != nil and cost_count!=0 ">
+                cost_count,
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                created_at,
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                updated_at,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != nil and id!=0 ">
+                #{id},
+            </if>
+            <if test="cost_count != nil and cost_count!=0 ">
+                #{cost_count},
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                #{created_at.Time},
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                #{updated_at.Time},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective">
+        update cost_count_info
+        <set>
+            <if test="cost_count != nil and cost_count!=0 ">
+                cost_count = #{cost_count},
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                created_at = #{created_at.Time},
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                updated_at = #{updated_at.Time},
+            </if>
+            updated_at = CURRENT_TIMESTAMP,
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>

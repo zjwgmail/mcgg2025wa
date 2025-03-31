@@ -1,0 +1,45 @@
+{
+    "appkey": "a5AzGtEr",
+    "business_phone": "639692369842",
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "85257481920",
+    "type": "template",
+    "template": {
+        "name": "mcgg_fission_progress_simple_zhcn",
+        "language": {
+            "policy": "deterministic",
+            "code": "zh_CN"
+        },
+        "components": [
+            {
+                "type": "header",
+                "parameters": [
+                    {
+                        "type": "image",
+                        "image": {
+                            "id": "1901700246987634"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "body",
+                "parameters": [
+                    {
+                        "type": "text",
+                        "text": "助力人昵称"
+                    },
+                    {
+                        "type": "text",
+                        "text": "剩余好友数量"
+                    },
+                    {
+                        "type": "text",
+                        "text": "奖品名称"
+                    }
+                ]
+            }
+        ]
+    }
+}

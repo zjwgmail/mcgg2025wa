@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"],
+      "@assets": ["src/assets"],
+      "@assets/*": ["src/assets/*"],
+      "@styles": ["src/styles"],
+      "@styles/*": ["src/styles/*"],
+      "@utils": ["src/utils"],
+      "@utils/*": ["src/utils/*"],
+      "@com": ["src/components"],
+      "@com/*": ["src/components/*"],
+      "@bizs": ["src/bizs"],
+      "@bizs/*": ["src/bizs/*"],
+      "@pages": ["src/pages"],
+      "@pages/*": ["src/pages/*"]
+    },
+    "jsx": "preserve"
+  },
+  "exclude": ["node_modules", "dist"]
+}

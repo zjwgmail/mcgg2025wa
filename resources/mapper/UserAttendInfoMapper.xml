@@ -1,0 +1,661 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"-->
+<!--        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">-->
+
+<!--<mapper>-->
+<!--    <resultMap id="BaseResultMap"  tables="user_attend_info">-->
+<!--        <id column="id" langType="int"/>-->
+<!--        <result column="activity_id" langType="int"/>-->
+<!--        <result column="channel" langType="string"/>-->
+<!--        <result column="language" langType="string"/>-->
+<!--        <result column="generation" langType="string"/>-->
+<!--        <result column="identification_code" langType="string"/>-->
+<!--        <result column="wa_id" langType="string"/>-->
+<!--        <result column="rally_code" langType="string"/>-->
+<!--        <result column="user_nickname" langType="string"/>-->
+<!--        <result column="three_cdk_code" langType="string"/>-->
+<!--        <result column="five_cdk_code" langType="string"/>-->
+<!--        <result column="eight_cdk_code" langType="string"/>-->
+<!--        <result column="attend_at" langType="time.Time"/>-->
+<!--        <result column="start_group_at" langType="time.Time"/>-->
+<!--        <result column="newest_free_start_at" langType="time.Time"/>-->
+<!--        <result column="newest_free_end_at" langType="time.Time"/>-->
+<!--        <result column="send_renew_free_at" langType="time.Time"/>-->
+<!--        <result column="is_send_renew_free_msg" langType="int8"/>-->
+<!--        <result column="newest_help_at" langType="time.Time"/>-->
+<!--        <result column="three_over_at" langType="time.Time"/>-->
+<!--        <result column="five_over_at" langType="time.Time"/>-->
+<!--        <result column="eight_over_at" langType="time.Time"/>-->
+<!--        <result column="attend_status" langType="string"/>-->
+<!--        <result column="is_three_stage" langType="int8"/>-->
+<!--        <result column="is_five_stage" langType="int8"/>-->
+<!--        <result column="created_at" langType="time.Time"/>-->
+<!--        <result column="updated_at" langType="time.Time"/>-->
+<!--        <result column="red_packet_ready_at" langType="time.Time"/>-->
+<!--        <result column="red_packet_send_at" langType="time.Time"/>-->
+<!--        <result column="extra" langType="string"/>-->
+<!--        <result column="red_packet_code" langType="string"/>-->
+<!--        <result column="red_packet_status" langType="string"/>-->
+<!--        <result column="is_send_cdk_msg" langType="int8"/>-->
+<!--        <result column="is_send_clustering_msg" langType="int8"/>-->
+<!--        <result column="send_clustering_at" langType="time.Time"/>-->
+<!--        <result column="is_send_pay_renew_free_msg" langType="int8"/>-->
+<!--        <result column="short_link" langType="string"/>-->
+<!--    </resultMap>-->
+<!--    <sql id="Base_Column_List">-->
+<!--        id,activity_id,channel,language,generation,identification_code,wa_id,rally_code,user_nickname,three_cdk_code,five_cdk_code,eight_cdk_code,attend_at,start_group_at,newest_free_start_at,newest_free_end_at,send_renew_free_at,is_send_renew_free_msg,newest_help_at,three_over_at,five_over_at,eight_over_at,attend_status,is_three_stage,is_five_stage,created_at,updated_at,red_packet_ready_at,red_packet_send_at,red_packet_code,red_packet_status,is_send_cdk_msg,is_send_clustering_msg,send_clustering_at,is_send_pay_renew_free_msg,short_link-->
+<!--    </sql>-->
+
+<!--    <select id="selectByPrimaryKey" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info-->
+<!--        where id = #{id}-->
+<!--    </select>-->
+
+<!--    <delete id="deleteByPrimaryKey" >-->
+<!--        delete-->
+<!--        from user_attend_info-->
+<!--        where id = #{id}-->
+<!--    </delete>-->
+
+<!--    <insert id="insertSelective" >-->
+<!--        insert into user_attend_info-->
+<!--        <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--            <if test="id != nil and id!=0 ">-->
+<!--                id,-->
+<!--            </if>-->
+<!--            <if test="activity_id != nil and activity_id!=0 ">-->
+<!--                activity_id,-->
+<!--            </if>-->
+<!--            <if test="channel != nil and channel!='' ">-->
+<!--                channel,-->
+<!--            </if>-->
+<!--            <if test="language != nil and language!='' ">-->
+<!--                language,-->
+<!--            </if>-->
+<!--            <if test="generation != nil and generation!='' ">-->
+<!--                generation,-->
+<!--            </if>-->
+<!--            <if test="identification_code != nil and identification_code!='' ">-->
+<!--                identification_code,-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                wa_id,-->
+<!--            </if>-->
+<!--            <if test="rally_code != nil and rally_code!='' ">-->
+<!--                rally_code,-->
+<!--            </if>-->
+<!--            <if test="user_nickname != nil and user_nickname!='' ">-->
+<!--                user_nickname,-->
+<!--            </if>-->
+<!--            <if test="three_cdk_code != nil and three_cdk_code!='' ">-->
+<!--                three_cdk_code,-->
+<!--            </if>-->
+<!--            <if test="five_cdk_code != nil and five_cdk_code!='' ">-->
+<!--                five_cdk_code,-->
+<!--            </if>-->
+<!--            <if test="eight_cdk_code != nil and eight_cdk_code!='' ">-->
+<!--                eight_cdk_code,-->
+<!--            </if>-->
+<!--            <if test="attend_at != nil and attend_at.IsNotZero ">-->
+<!--                attend_at,-->
+<!--            </if>-->
+<!--            <if test="start_group_at != nil and start_group_at.IsNotZero ">-->
+<!--                start_group_at,-->
+<!--            </if>-->
+<!--            <if test="newest_free_start_at != nil and newest_free_start_at.IsNotZero ">-->
+<!--                newest_free_start_at,-->
+<!--            </if>-->
+<!--            <if test="newest_free_end_at != nil and newest_free_end_at.IsNotZero ">-->
+<!--                newest_free_end_at,-->
+<!--            </if>-->
+<!--            <if test="send_renew_free_at != nil and send_renew_free_at.IsNotZero ">-->
+<!--                send_renew_free_at,-->
+<!--            </if>-->
+<!--            <if test="is_send_renew_free_msg != nil and is_send_renew_free_msg!=0 ">-->
+<!--                is_send_renew_free_msg,-->
+<!--            </if>-->
+<!--            <if test="newest_help_at != nil and newest_help_at.IsNotZero ">-->
+<!--                newest_help_at,-->
+<!--            </if>-->
+<!--            <if test="three_over_at != nil and three_over_at.IsNotZero ">-->
+<!--                three_over_at,-->
+<!--            </if>-->
+<!--            <if test="five_over_at != nil and five_over_at.IsNotZero ">-->
+<!--                five_over_at,-->
+<!--            </if>-->
+<!--            <if test="eight_over_at != nil and eight_over_at.IsNotZero ">-->
+<!--                eight_over_at,-->
+<!--            </if>-->
+<!--            <if test="attend_status != nil and attend_status!='' ">-->
+<!--                attend_status,-->
+<!--            </if>-->
+<!--            <if test="is_three_stage != nil and is_three_stage!=0 ">-->
+<!--                is_three_stage,-->
+<!--            </if>-->
+<!--            <if test="is_five_stage != nil and is_five_stage!=0 ">-->
+<!--                is_five_stage,-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                created_at,-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                updated_at,-->
+<!--            </if>-->
+<!--            <if test="red_packet_ready_at != nil and red_packet_ready_at.IsNotZero ">-->
+<!--                red_packet_ready_at,-->
+<!--            </if>-->
+<!--            <if test="red_packet_send_at != nil and red_packet_send_at.IsNotZero ">-->
+<!--                red_packet_send_at,-->
+<!--            </if>-->
+<!--            <if test="extra != nil and extra!='' ">-->
+<!--                extra,-->
+<!--            </if>-->
+<!--            <if test="red_packet_code != nil and red_packet_code!='' ">-->
+<!--                red_packet_code,-->
+<!--            </if>-->
+<!--            <if test="red_packet_status != nil and red_packet_status!='' ">-->
+<!--                red_packet_status,-->
+<!--            </if>-->
+<!--            <if test="is_send_cdk_msg != nil and is_send_cdk_msg!=0 ">-->
+<!--                is_send_cdk_msg,-->
+<!--            </if>-->
+<!--            <if test="is_send_clustering_msg != nil and is_send_clustering_msg!=0 ">-->
+<!--                is_send_clustering_msg,-->
+<!--            </if>-->
+<!--            <if test="send_clustering_at != nil and send_clustering_at.IsNotZero ">-->
+<!--                send_clustering_at,-->
+<!--            </if>-->
+<!--            <if test="is_send_pay_renew_free_msg != nil and is_send_pay_renew_free_msg!=0 ">-->
+<!--                is_send_pay_renew_free_msg,-->
+<!--            </if>-->
+<!--            <if test="short_link != nil and short_link!='' ">-->
+<!--                short_link,-->
+<!--            </if>-->
+<!--        </trim>-->
+<!--        <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--            <if test="id != nil and id!=0 ">-->
+<!--                #{id},-->
+<!--            </if>-->
+<!--            <if test="activity_id != nil and activity_id!=0 ">-->
+<!--                #{activity_id},-->
+<!--            </if>-->
+<!--            <if test="channel != nil and channel!='' ">-->
+<!--                #{channel},-->
+<!--            </if>-->
+<!--            <if test="language != nil and language!='' ">-->
+<!--                #{language},-->
+<!--            </if>-->
+<!--            <if test="generation != nil and generation!='' ">-->
+<!--                #{generation},-->
+<!--            </if>-->
+<!--            <if test="identification_code != nil and identification_code!='' ">-->
+<!--                #{identification_code},-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                #{wa_id},-->
+<!--            </if>-->
+<!--            <if test="rally_code != nil and rally_code!='' ">-->
+<!--                #{rally_code},-->
+<!--            </if>-->
+<!--            <if test="user_nickname != nil and user_nickname!='' ">-->
+<!--                #{user_nickname},-->
+<!--            </if>-->
+<!--            <if test="three_cdk_code != nil and three_cdk_code!='' ">-->
+<!--                #{three_cdk_code},-->
+<!--            </if>-->
+<!--            <if test="five_cdk_code != nil and five_cdk_code!='' ">-->
+<!--                #{five_cdk_code},-->
+<!--            </if>-->
+<!--            <if test="eight_cdk_code != nil and eight_cdk_code!='' ">-->
+<!--                #{eight_cdk_code},-->
+<!--            </if>-->
+<!--            <if test="attend_at != nil and attend_at.IsNotZero ">-->
+<!--                #{attend_at.Time},-->
+<!--            </if>-->
+<!--            <if test="start_group_at != nil and start_group_at.IsNotZero ">-->
+<!--                #{start_group_at.Time},-->
+<!--            </if>-->
+<!--            <if test="newest_free_start_at != nil and newest_free_start_at.IsNotZero ">-->
+<!--                #{newest_free_start_at.Time},-->
+<!--            </if>-->
+<!--            <if test="newest_free_end_at != nil and newest_free_end_at.IsNotZero ">-->
+<!--                #{newest_free_end_at.Time},-->
+<!--            </if>-->
+<!--            <if test="send_renew_free_at != nil and send_renew_free_at.IsNotZero ">-->
+<!--                #{send_renew_free_at.Time},-->
+<!--            </if>-->
+<!--            <if test="is_send_renew_free_msg != nil and is_send_renew_free_msg!=0 ">-->
+<!--                #{is_send_renew_free_msg},-->
+<!--            </if>-->
+<!--            <if test="newest_help_at != nil and newest_help_at.IsNotZero ">-->
+<!--                #{newest_help_at.Time},-->
+<!--            </if>-->
+<!--            <if test="three_over_at != nil and three_over_at.IsNotZero ">-->
+<!--                #{three_over_at.Time},-->
+<!--            </if>-->
+<!--            <if test="five_over_at != nil and five_over_at.IsNotZero ">-->
+<!--                #{five_over_at.Time},-->
+<!--            </if>-->
+<!--            <if test="eight_over_at != nil and eight_over_at.IsNotZero ">-->
+<!--                #{eight_over_at.Time},-->
+<!--            </if>-->
+<!--            <if test="attend_status != nil and attend_status!='' ">-->
+<!--                #{attend_status},-->
+<!--            </if>-->
+<!--            <if test="is_three_stage != nil and is_three_stage!=0 ">-->
+<!--                #{is_three_stage},-->
+<!--            </if>-->
+<!--            <if test="is_five_stage != nil and is_five_stage!=0 ">-->
+<!--                #{is_five_stage},-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                #{created_at.Time},-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                #{updated_at.Time},-->
+<!--            </if>-->
+<!--            <if test="red_packet_ready_at != nil and red_packet_ready_at.IsNotZero ">-->
+<!--                #{red_packet_ready_at.Time},-->
+<!--            </if>-->
+<!--            <if test="red_packet_send_at != nil and red_packet_send_at.IsNotZero ">-->
+<!--                #{red_packet_send_at.Time},-->
+<!--            </if>-->
+<!--            <if test="extra != nil and extra!='' ">-->
+<!--                #{extra},-->
+<!--            </if>-->
+<!--            <if test="red_packet_code != nil and red_packet_code!='' ">-->
+<!--                #{red_packet_code},-->
+<!--            </if>-->
+<!--            <if test="red_packet_status != nil and red_packet_status!='' ">-->
+<!--                #{red_packet_status},-->
+<!--            </if>-->
+<!--            <if test="is_send_cdk_msg != nil and is_send_cdk_msg!=0 ">-->
+<!--                #{is_send_cdk_msg},-->
+<!--            </if>-->
+<!--            <if test="is_send_clustering_msg != nil and is_send_clustering_msg!=0 ">-->
+<!--                #{is_send_clustering_msg},-->
+<!--            </if>-->
+<!--            <if test="send_clustering_at != nil and send_clustering_at.IsNotZero ">-->
+<!--                #{send_clustering_at.Time},-->
+<!--            </if>-->
+<!--            <if test="is_send_pay_renew_free_msg != nil and is_send_pay_renew_free_msg!=0 ">-->
+<!--                #{is_send_pay_renew_free_msg},-->
+<!--            </if>-->
+<!--            <if test="short_link != nil and short_link!='' ">-->
+<!--                #{short_link},-->
+<!--            </if>-->
+<!--        </trim>-->
+<!--    </insert>-->
+
+<!--    <update id="updateByPrimaryKeySelective">-->
+<!--        update user_attend_info-->
+<!--        <set>-->
+<!--            <if test="activity_id != nil and activity_id!=0 ">-->
+<!--                activity_id = #{activity_id},-->
+<!--            </if>-->
+<!--            <if test="channel != nil and channel!='' ">-->
+<!--                channel = #{channel},-->
+<!--            </if>-->
+<!--            <if test="language != nil and language!='' ">-->
+<!--                language = #{language},-->
+<!--            </if>-->
+<!--            <if test="generation != nil and generation!='' ">-->
+<!--                generation = #{generation},-->
+<!--            </if>-->
+<!--            <if test="identification_code != nil and identification_code!='' ">-->
+<!--                identification_code = #{identification_code},-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                wa_id = #{wa_id},-->
+<!--            </if>-->
+<!--            <if test="rally_code != nil and rally_code!='' ">-->
+<!--                rally_code = #{rally_code},-->
+<!--            </if>-->
+<!--            <if test="user_nickname != nil and user_nickname!='' ">-->
+<!--                user_nickname = #{user_nickname},-->
+<!--            </if>-->
+<!--            <if test="three_cdk_code != nil and three_cdk_code!='' ">-->
+<!--                three_cdk_code = #{three_cdk_code},-->
+<!--            </if>-->
+<!--            <if test="five_cdk_code != nil and five_cdk_code!='' ">-->
+<!--                five_cdk_code = #{five_cdk_code},-->
+<!--            </if>-->
+<!--            <if test="eight_cdk_code != nil and eight_cdk_code!='' ">-->
+<!--                eight_cdk_code = #{eight_cdk_code},-->
+<!--            </if>-->
+<!--            <if test="attend_at != nil and attend_at.IsNotZero ">-->
+<!--                attend_at = #{attend_at.Time},-->
+<!--            </if>-->
+<!--            <if test="start_group_at != nil and start_group_at.IsNotZero ">-->
+<!--                start_group_at = #{start_group_at.Time},-->
+<!--            </if>-->
+<!--            <if test="newest_free_start_at != nil and newest_free_start_at.IsNotZero ">-->
+<!--                newest_free_start_at = #{newest_free_start_at.Time},-->
+<!--            </if>-->
+<!--            <if test="newest_free_end_at != nil and newest_free_end_at.IsNotZero ">-->
+<!--                newest_free_end_at = #{newest_free_end_at.Time},-->
+<!--            </if>-->
+<!--            <if test="send_renew_free_at != nil and send_renew_free_at.IsNotZero ">-->
+<!--                send_renew_free_at = #{send_renew_free_at.Time},-->
+<!--            </if>-->
+<!--            <if test="is_send_renew_free_msg != nil and is_send_renew_free_msg!=0 ">-->
+<!--                is_send_renew_free_msg = #{is_send_renew_free_msg},-->
+<!--            </if>-->
+<!--            <if test="newest_help_at != nil and newest_help_at.IsNotZero ">-->
+<!--                newest_help_at = #{newest_help_at.Time},-->
+<!--            </if>-->
+<!--            <if test="three_over_at != nil and three_over_at.IsNotZero ">-->
+<!--                three_over_at = #{three_over_at.Time},-->
+<!--            </if>-->
+<!--            <if test="five_over_at != nil and five_over_at.IsNotZero ">-->
+<!--                five_over_at = #{five_over_at.Time},-->
+<!--            </if>-->
+<!--            <if test="eight_over_at != nil and eight_over_at.IsNotZero ">-->
+<!--                eight_over_at = #{eight_over_at.Time},-->
+<!--            </if>-->
+<!--            <if test="attend_status != nil and attend_status!='' ">-->
+<!--                attend_status = #{attend_status},-->
+<!--            </if>-->
+<!--            <if test="is_three_stage != nil and is_three_stage!=0 ">-->
+<!--                is_three_stage = #{is_three_stage},-->
+<!--            </if>-->
+<!--            <if test="is_five_stage != nil and is_five_stage!=0 ">-->
+<!--                is_five_stage = #{is_five_stage},-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                created_at = #{created_at.Time},-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                updated_at = #{updated_at.Time},-->
+<!--            </if>-->
+<!--            <if test="red_packet_ready_at != nil and red_packet_ready_at.IsNotZero ">-->
+<!--                red_packet_ready_at = #{red_packet_ready_at.Time},-->
+<!--            </if>-->
+<!--            <if test="red_packet_send_at != nil and red_packet_send_at.IsNotZero ">-->
+<!--                red_packet_send_at = #{red_packet_send_at.Time},-->
+<!--            </if>-->
+<!--            <if test="extra != nil and extra!='' ">-->
+<!--                extra = #{extra},-->
+<!--            </if>-->
+<!--            <if test="red_packet_code != nil and red_packet_code!='' ">-->
+<!--                red_packet_code = #{red_packet_code},-->
+<!--            </if>-->
+<!--            <if test="red_packet_status != nil and red_packet_status!='' ">-->
+<!--                red_packet_status = #{red_packet_status},-->
+<!--            </if>-->
+<!--            <if test="is_send_cdk_msg != nil and is_send_cdk_msg!=0 ">-->
+<!--                is_send_cdk_msg = #{is_send_cdk_msg},-->
+<!--            </if>-->
+<!--            <if test="is_send_clustering_msg != nil and is_send_clustering_msg!=0 ">-->
+<!--                is_send_clustering_msg = #{is_send_clustering_msg},-->
+<!--            </if>-->
+<!--            <if test="send_clustering_at != nil and send_clustering_at.IsNotZero ">-->
+<!--                send_clustering_at = #{send_clustering_at.Time},-->
+<!--            </if>-->
+<!--            <if test="is_send_pay_renew_free_msg != nil and is_send_pay_renew_free_msg!=0 ">-->
+<!--                is_send_pay_renew_free_msg = #{is_send_pay_renew_free_msg},-->
+<!--            </if>-->
+<!--            <if test="short_link != nil and short_link!='' ">-->
+<!--                short_link = #{short_link},-->
+<!--            </if>-->
+<!--            updated_at = CURRENT_TIMESTAMP,-->
+<!--        </set>-->
+<!--        where id = #{id}-->
+<!--    </update>-->
+
+<!--    <select id="SelectByRallyCode" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and rally_code = #{rally_code}-->
+<!--    </select>-->
+
+<!--    <select id="SelectByWaId" resultMap="BaseResultMap" >-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and wa_id = #{wa_id}-->
+<!--    </select>-->
+
+<!--    <select id="SelectByWaIdBySession" resultMap="BaseResultMap" >-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and wa_id = #{wa_id}-->
+<!--    </select>-->
+
+
+<!--    <select id="CountReCallOfUnRedPacket">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and attend_status = 'start_group'-->
+<!--        and red_packet_status = 'un_red_packet'-->
+<!--        and TIMESTAMPDIFF(MINUTE, newest_help_at, NOW()) &gt; #{unRedPacketMinute}-->
+<!--        and TIMESTAMPDIFF(HOUR, start_group_at, NOW()) &lt; 24-->
+<!--    </select>-->
+
+<!--    <select id="SelectReCallOfUnRedPacket" resultMap="BaseResultMap" >-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and attend_status = 'start_group'-->
+<!--        and red_packet_status = 'un_red_packet'-->
+<!--        and TIMESTAMPDIFF(MINUTE, newest_help_at, NOW()) &gt; #{unRedPacketMinute}-->
+<!--        and TIMESTAMPDIFF(HOUR, start_group_at, NOW()) &lt; 24-->
+<!--        order by id-->
+<!--        limit #{page_start},#{page_size}-->
+<!--    </select>-->
+
+
+<!--    <select id="CountReCallOfSendRedPacket">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and attend_status = 'start_group'-->
+<!--        and red_packet_status = 'red_packet_ready'-->
+<!--        and TIMESTAMPDIFF(MINUTE, red_packet_ready_at, NOW()) &gt; #{sendRedPacketMinute}-->
+<!--        and TIMESTAMPDIFF(HOUR, start_group_at, NOW()) &lt; 24-->
+<!--    </select>-->
+
+<!--    <select id="SelectReCallOfSendRedPacket" resultMap="BaseResultMap" >-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and attend_status = 'start_group'-->
+<!--        and red_packet_status = 'red_packet_ready'-->
+<!--        and TIMESTAMPDIFF(MINUTE, red_packet_ready_at, NOW()) &gt; #{sendRedPacketMinute}-->
+<!--        and TIMESTAMPDIFF(HOUR, start_group_at, NOW()) &lt; 24-->
+<!--        order by id-->
+<!--        limit #{page_start},#{page_size}-->
+<!--    </select>-->
+
+
+<!--    <select id="CountReCallOfStartGroup">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from user_attend_info u-->
+<!--        where-->
+<!--        u.activity_id = #{activity_id}-->
+<!--        and u.attend_status = 'attend'-->
+<!--        and TIMESTAMPDIFF(MINUTE, u.attend_at, NOW()) &gt; #{twoStartGroupMinute}-->
+<!--        and (-->
+<!--        SELECT COUNT(*)-->
+<!--        FROM msg_info m-->
+<!--        WHERE m.wa_id = u.wa_id-->
+<!--        and m.msg_type = 'startGroupMsg'-->
+<!--        ) &lt;= 1-->
+<!--    </select>-->
+
+<!--    <select id="SelectReCallOfStartGroup" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        u.*-->
+<!--        from user_attend_info u-->
+<!--        where-->
+<!--        u.activity_id = #{activity_id}-->
+<!--        and u.attend_status = 'attend'-->
+<!--        and TIMESTAMPDIFF(MINUTE, u.attend_at, NOW()) &gt; #{twoStartGroupMinute}-->
+<!--        and (-->
+<!--        SELECT COUNT(*)-->
+<!--        FROM msg_info m-->
+<!--        WHERE m.wa_id = u.wa_id-->
+<!--        and m.msg_type = 'startGroupMsg'-->
+<!--        ) &lt;= 1-->
+<!--        order by u.id-->
+<!--        limit #{page_start},#{page_size}-->
+<!--    </select>-->
+
+
+<!--    <select id="CountRenewFree">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and is_send_renew_free_msg = #{is_send_renew_free_msg}-->
+<!--        and TIMESTAMPDIFF(SECOND, send_renew_free_at, NOW()) &gt;= 0-->
+<!--    </select>-->
+
+<!--    <select id="SelectRenewFree" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and is_send_renew_free_msg = #{is_send_renew_free_msg}-->
+<!--        and TIMESTAMPDIFF(SECOND, send_renew_free_at, NOW()) &gt;= 0-->
+<!--        and id &gt; #{last_id}  &lt;!&ndash; 增加基于id的分页条件 &ndash;&gt;-->
+<!--        order by id-->
+<!--        limit #{page_size}-->
+<!--    </select>-->
+
+
+<!--    <select id="CountNotSendCdkUser">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and is_send_cdk_msg = #{is_send_cdk_msg}-->
+<!--        and (attend_status = 'eight_over' or is_three_stage=2 or is_five_stage=2)-->
+<!--    </select>-->
+
+<!--    <select id="SelectNotSendCdkUser" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and is_send_cdk_msg = #{is_send_cdk_msg}-->
+<!--        and (attend_status = 'eight_over' or is_three_stage = 2 or is_five_stage = 2)-->
+<!--        and id &gt; #{last_id} &lt;!&ndash; 基于ID的分页条件 &ndash;&gt;-->
+<!--        order by id-->
+<!--        limit #{page_size}-->
+<!--    </select>-->
+
+
+
+<!--    <select id="CountReCallOfClustering">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and attend_status != 'eight_over'-->
+<!--        and is_five_stage= 1-->
+<!--        and is_send_clustering_msg = #{clusteringUnSend}-->
+<!--        and TIMESTAMPDIFF(SECOND, send_clustering_at, NOW()) &gt;= 0-->
+<!--    </select>-->
+
+<!--    <select id="SelectReCallOfClustering" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--        and attend_status != 'eight_over'-->
+<!--        and is_five_stage= 1-->
+<!--        and is_send_clustering_msg = #{clusteringUnSend}-->
+<!--        and TIMESTAMPDIFF(SECOND, send_clustering_at, NOW()) &gt;= 0-->
+<!--        and id &gt; #{last_id} &lt;!&ndash; 基于ID的分页条件 &ndash;&gt;-->
+<!--        order by id-->
+<!--        limit #{page_size}-->
+<!--    </select>-->
+
+<!--    <select id="CountUserByGeneration">-->
+<!--        select-->
+<!--        count(*) as count,-->
+<!--        channel,-->
+<!--        language,-->
+<!--        generation-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{params.activityId}-->
+<!--        <if test="params.startReportCustomTime != nil and params.startReportCustomTime.IsNotZero ">-->
+<!--            and attend_at &gt;= #{params.startReportCustomTime.Time}-->
+<!--        </if>-->
+<!--        <if test="params.endReportCustomTime != nil and params.endReportCustomTime.IsNotZero ">-->
+<!--            and attend_at &lt; #{params.endReportCustomTime.Time}-->
+<!--        </if>-->
+<!--        group by channel,language,generation-->
+<!--        order by channel,language,generation-->
+<!--    </select>-->
+
+
+<!--    <select id="CountPayRenewFree">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from user_attend_info u-->
+<!--        where-->
+<!--        u.activity_id = #{activity_id}-->
+<!--        and u.is_send_pay_renew_free_msg = #{is_send_pay_renew_free_msg}-->
+<!--        and u.attend_status != 'eight_over'-->
+<!--        and u.is_five_stage= 1-->
+<!--        and TIMESTAMPDIFF(HOUR, u.newest_free_start_at, NOW()) &gt;=  #{diff_hour}-->
+<!--        and exists (-->
+<!--        select 1 from help_info h where h.activity_id = u.activity_id and h.rally_code = u.rally_code-->
+<!--        )-->
+<!--    </select>-->
+
+<!--    <select id="SelectPayRenewFree" resultMap="BaseResultMap" >-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from user_attend_info u-->
+<!--        where-->
+<!--        u.activity_id = #{activity_id}-->
+<!--        and u.is_send_pay_renew_free_msg = #{is_send_pay_renew_free_msg}-->
+<!--        and u.attend_status != 'eight_over'-->
+<!--        and u.is_five_stage= 1-->
+<!--        and TIMESTAMPDIFF(HOUR, u.newest_free_start_at, NOW()) &gt;=  #{diff_hour}-->
+<!--        and u.id &gt; #{last_id}-->
+<!--        and exists (-->
+<!--        select 1 from help_info h where h.activity_id = u.activity_id and h.rally_code = u.rally_code-->
+<!--        )-->
+<!--        order by u.id-->
+<!--        limit #{page_size}-->
+<!--    </select>-->
+
+<!--    <select id="CountUserByActivityId">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from user_attend_info-->
+<!--        where-->
+<!--        activity_id = #{activity_id}-->
+<!--    </select>-->
+<!--</mapper>-->

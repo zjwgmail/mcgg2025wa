@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+
+<mapper>
+    <resultMap id="BaseResultMap"  tables="help_info_v2">
+        <id column="id" langType="int"/>
+        <result column="rally_code" langType="string"/>
+        <result column="wa_id" langType="string"/>
+        <result column="created_at" langType="time.Time"/>
+        <result column="updated_at" langType="time.Time"/>
+        <result column="help_status" langType="string"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,rally_code,wa_id,created_at,updated_at,help_status
+    </sql>
+
+<!--    <select id="selectByPrimaryKey" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from help_info_v2-->
+<!--        where id = #{id}-->
+<!--    </select>-->
+
+    <delete id="deleteByPrimaryKey" >
+        delete
+        from help_info_v2
+        where id = #{id}
+    </delete>
+
+    <insert id="insertSelective" >
+        insert into help_info_v2
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            help_at,
+            <if test="id != nil and id!=0 ">
+                id,
+            </if>
+            <if test="rally_code != nil and rally_code!='' ">
+                rally_code,
+            </if>
+            <if test="wa_id != nil and wa_id!='' ">
+                wa_id,
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                created_at,
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                updated_at,
+            </if>
+            <if test="help_status != nil and help_status!='' ">
+                help_status,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            UNIX_TIMESTAMP(),
+            <if test="id != nil and id!=0 ">
+                #{id},
+            </if>
+            <if test="rally_code != nil and rally_code!='' ">
+                #{rally_code},
+            </if>
+            <if test="wa_id != nil and wa_id!='' ">
+                #{wa_id},
+            </if>
+            <if test="created_at != nil and created_at.IsNotZero ">
+                #{created_at.Time},
+            </if>
+            <if test="updated_at != nil and updated_at.IsNotZero ">
+                #{updated_at.Time},
+            </if>
+            <if test="help_status != nil and help_status!='' ">
+                #{help_status},
+            </if>
+        </trim>
+    </insert>
+
+<!--    <update id="updateByPrimaryKeySelective">-->
+<!--        update help_info_v2-->
+<!--        <set>-->
+<!--            <if test="rally_code != nil and rally_code!='' ">-->
+<!--                rally_code = #{rally_code},-->
+<!--            </if>-->
+<!--            <if test="wa_id != nil and wa_id!='' ">-->
+<!--                wa_id = #{wa_id},-->
+<!--            </if>-->
+<!--            <if test="created_at != nil and created_at.IsNotZero ">-->
+<!--                created_at = #{created_at.Time},-->
+<!--            </if>-->
+<!--            <if test="updated_at != nil and updated_at.IsNotZero ">-->
+<!--                updated_at = #{updated_at.Time},-->
+<!--            </if>-->
+<!--            <if test="help_status != nil and help_status!='' ">-->
+<!--                help_status = #{help_status},-->
+<!--            </if>-->
+<!--            updated_at = CURRENT_TIMESTAMP,-->
+<!--        </set>-->
+<!--        where id = #{id}-->
+<!--    </update>-->
+
+<!--    <select id="CountByRallyCode">-->
+<!--        select-->
+<!--        count(*)-->
+<!--        from help_info_v2-->
+<!--        where-->
+<!--        rally_code = #{rally_code}-->
+<!--    </select>-->
+
+    <select id="SelectByWaId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        help_info_v2 WHERE wa_id = #{wa_id}
+    </select>
+
+    <select id="SelectListByRallyCode" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        help_info_v2 WHERE rally_code = #{rally_code}
+    </select>
+
+    <select id="SelectDistinctCodeByTimestamp">
+        select
+        distinct(rally_code)
+        from
+        help_info_v2
+        where
+        help_at >= #{startTimestamp}
+        and help_at &lt; #{endTimestamp}
+        and rally_code > #{minId}
+        order by
+        rally_code
+        limit #{limit};
+    </select>
+
+    <select id="CountByCodesTimestamp">
+        select
+        rally_code as code, count(rally_code) as `count`
+        from
+        help_info_v2
+        where
+        help_at >= #{startTimestamp}
+        and help_at &lt; #{endTimestamp}
+        and rally_code in
+        <foreach collection="codes" item="code" index="index" separator="," open="(" close=")">
+            #{code}
+        </foreach>
+        group by rally_code;
+    </select>
+
+<!--    <select id="CountUserByHelpCount">-->
+<!--        select count(*) as helpNumCount,a.helpNum,b.channel,b.language from-->
+<!--        (-->
+<!--            select-->
+<!--            count(*) as helpNum, h.rally_code-->
+<!--            from-->
+<!--            help_info_v2 h-->
+<!--            where-->
+<!--            true-->
+<!--            <if test="params.startReportCustomTime != nil and params.startReportCustomTime.IsNotZero ">-->
+<!--                and h.created_at &gt;= #{params.startReportCustomTime.Time}-->
+<!--            </if>-->
+<!--            <if test="params.endReportCustomTime != nil and params.endReportCustomTime.IsNotZero ">-->
+<!--                and h.created_at &lt; #{params.endReportCustomTime.Time}-->
+<!--            </if>-->
+<!--            group by h.rally_code-->
+<!--        ) a-->
+<!--        join-->
+<!--        user_attend_info_v2 b on  a.rally_code = b.rally_code-->
+<!--        group by b.channel,b.language,a.helpNum-->
+<!--        order by b.channel,b.language,a.helpNum-->
+<!--    </select>-->
+
+</mapper>

@@ -1,0 +1,738 @@
+msgSetting:
+  msgMap:
+    # 参与活动消息
+    activityTaskMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737104297907-6cpO3TxIbm.png
+            bodyText: "前往应用商店预约Magic Chess: Go Go (MCGG)，即可获得MLBB外观！🎉\n邀请好友组队预约，还有机会🎁抽取现金、手机大奖！\n\n⭐请您先预约新游，之后再邀请好友助力。\n活动规则：https://share.mc-gogo.com/z8bdCmL\n\n👇点击下方按钮，前往商店预约！"
+            footerText:
+            action:
+              displayText: 前往商店预约
+              # todo 等服务正式发布之后改回
+              url: https://play.mc-gogo.com/events/mcgg2025wa/promotion/?code={{1}}&gpt=1&lang={{2}}&channel={{3}}
+      "02":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737104297907-6cpO3TxIbm.png
+            bodyText: "Pre-register MCGG (Magic Chess: Go Go) in your app store to get an MLBB pack and a chance to win a permanent Skin! 🎉\nInvite your friends to pre-register together for a chance to win 🎁 cash prizes and phones!\n\n⭐Make sure to pre-register first, then invite your friends to assist you.\nEvent Guide: https://share.mc-gogo.com/A4XruAT\n\n👇Tap the button below to pre-register in the store!"
+            footerText:
+            action:
+              displayText: Pre-Register Now
+              url: https://play.mc-gogo.com/events/mcgg2025wa/promotion/?code={{1}}&gpt=1&lang={{2}}&channel={{3}}
+      "04":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737127236274-jK3Y0rgkeP.png
+            bodyText: "Praregistrasi MCGG (Magic Chess: Go Go) di toko aplikasi kamu buat dapatin MLBB Pack dan berkesempatan menangin Skin permanen! 🎉\nUndang teman buat praregistrasi bersama dan raih kesempatan mendapat 🎁 hadiah uang tunai & HP!\n\n⭐Yuk praregistrasi dulu, lalu undang teman untuk membantu.\nPanduan Event: https://share.mc-gogo.com/FAeb4jh\n\n👇Klik tombol di bawah buat praregistrasi di toko aplikasimu!"
+            footerText:
+            action:
+              displayText: Praregistrasi
+              url: https://play.mc-gogo.com/events/mcgg2025wa/promotion/?code={{1}}&gpt=1&lang={{2}}&channel={{3}}
+    # 非白国码-不能参与活动消息
+    cannotAttendActivityMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "抱歉，该活动仅限印尼地区WhatsApp号码的用户参与，您当前不符合参与条件。\n如有疑问，请阅读活动规则。"
+            action:
+              displayText: 查看活动规则
+              url: https://share.mc-gogo.com/z8bdCmL
+      "02":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "Sorry, this event is only available to WhatsApp users in Indonesia. You are currently not eligible to participate.\nIf you have any questions, please check the Event Rules."
+            action:
+              displayText: View Event Rules
+              url: https://share.mc-gogo.com/A4XruAT
+      "04":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "Maaf, event ini hanya tersedia untuk pengguna WhatsApp di Indonesia. Saat ini kamu tidak memenuhi syarat bergabung.\nSilakan baca Peraturan Event jika kamu punya pertanyaan."
+            action:
+              displayText: Lihat Aturan Event
+              url: https://share.mc-gogo.com/FAeb4jh
+    # 开团消息 todo 初代和非初代不同
+    startGroupMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108782113-NjF3Hy8I1O.png
+            bodyText: "🎉恭喜你，完成预约！\n继续邀请好友还有精彩大礼！\n\n邀请3位好友，最高可获得MCGG永久指挥官！\n邀请5位好友，最高可获得MLBB永久光启系列造型！\n邀请8位好友，最高可获得MCGG珍贵钻石！\n\n👇点击下方按钮，即可邀请好友！"
+            footerText:
+            action:
+              displayText: 邀请好友
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang01?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108782113-NjF3Hy8I1O.png
+            bodyText: "🎉Congratulations on your pre-registration!\nKeep inviting friends for amazing rewards!\n\nInvite 3 friends for a chance to win a permanent Commander in MCGG!\nInvite 5 friends for a chance to win a permanent Lightborn series Skin in MLBB!\nInvite 8 friends for a chance to win valuable MCGG Diamonds!\n\n👇Tap the button below to invite friends!"
+            footerText:
+            action:
+              displayText: Invite Friends
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang02?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737130880452-3CPR8jvSKp.png
+            bodyText: "🎉Praregistrasi berhasil!\nLanjut undang teman buat dapatin hadiah menarik!\n\nUndang 3 teman buat berkesempatan mendapat 1 Commander Permanen di MCGG!\nUndang 5 teman buat berkesempatan mendapat 1 Skin seri Lightborn permanen di MLBB!\nUndang 8 teman buat berkesempatan mendapat Diamond MCGG!\n\n👇Klik tombol di bawah buat undang teman!"
+            footerText:
+            action:
+              displayText: Undang Teman
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang04?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+    # 受邀人开团消息
+    helpStartGroupMsg:
+      # 语言
+      "01": #中文
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108782113-NjF3Hy8I1O.png
+            bodyText: "🎉恭喜你，完成预约！帮好友助力成功！\n同时你也开启自己的组队任务，邀请好友组队预约，还有机会🎁抽取现金、手机大奖！\n\n活动规则：https://share.mc-gogo.com/z8bdCmL\n👇点击下方按钮，立即邀请好友！"
+            footerText:
+            action:
+              displayText: 邀请好友
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang01?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108782113-NjF3Hy8I1O.png
+            bodyText: "🎉Congratulations! You've completed pre-registration and successfully assisted your friend!\nYou've also unlocked your own team task. Invite friends to join your pre-registration team for a chance to 🎁 win cash prizes and phones!\n\nEvent Guide: https://share.mc-gogo.com/A4XruAT\n👇Tap the button below to invite friends now!"
+            footerText:
+            action:
+              displayText: Invite Friends
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang02?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737130880452-3CPR8jvSKp.png
+            bodyText: "🎉Selamat! Kamu sudah selesai praregistrasi dan berhasil membantu temanmu!\nQuest tim kamu sendiri juga sudah terbuka. Undang teman buat gabung ke tim praregistrasi kamu, dapatin kesempatan 🎁 menang hadiah uang tunai dan HP!\n\nPanduan Event: https://share.mc-gogo.com/FAeb4jh\n👇Klik tombol di bawah buat undang teman sekarang!"
+            footerText:
+            action:
+              displayText: Undang Teman
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang04?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+    # 缓冲期-主态不能开团消息
+    founderCanNotStartGroupMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "由于活动过于火爆，奖励名额已达上限。您暂时无法发起组队参与活动，抱歉。\n如有疑问，请阅读活动规则。"
+            action:
+              displayText: 查看活动规则
+              url: https://share.mc-gogo.com/z8bdCmL
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "Due to overwhelming demand, all event reward quotas have been filled. You cannot initiate team participation at this time. We apologize for any inconvenience.\nIf you have any questions, please check the Event Rules."
+            action:
+              displayText: View Event Rules
+              url: https://share.mc-gogo.com/A4XruAT
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "Karena permintaan yang sangat banyak, semua kuota hadiah event sudah penuh. Kamu tidak bisa membuat tim saat ini. Mohon maaf atas ketidaknyamanan yang ditimbulkan.\nSilakan baca Peraturan Event jika kamu punya pertanyaan."
+            action:
+              displayText: Lihat Aturan Event
+              url: https://share.mc-gogo.com/FAeb4jh
+    # 缓冲期-客态不能开团消息
+    canNotStartGroupMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉恭喜你为好友成功助力！\n\n由于活动过于火爆，奖励名额已达上限。您暂时无法发起组队参与活动，抱歉。\n如有疑问，请阅读活动规则。"
+            action:
+              displayText: 查看活动规则
+              url: https://share.mc-gogo.com/z8bdCmL
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Congratulations on successfully assisting your friend!\n\nDue to overwhelming demand, all event reward quotas have been filled. You cannot initiate team participation at this time. We apologize for any inconvenience.\nIf you have any questions, please check the Event Rules."
+            action:
+              displayText: View Event Rules
+              url: https://share.mc-gogo.com/A4XruAT
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Kamu berhasil bantu temanmu!\n\nKarena permintaan yang sangat banyak, semua kuota hadiah event sudah penuh. Kamu tidak bisa membuat tim saat ini. Mohon maaf atas ketidaknyamanan yang ditimbulkan.\nSilakan baca Peraturan Event jika kamu punya pertanyaan."
+            action:
+              displayText: Lihat Aturan Event
+              url: https://share.mc-gogo.com/FAeb4jh
+    # 单人开始助力信息
+    helpTaskSingleStartMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737104297907-6cpO3TxIbm.png
+            bodyText: "👏还差一步！点击前往预约，即可帮他助力！\n帮他助力后，你将可自己开团组队，赢取大奖！"
+            footerText:
+            action:
+              displayText: 前往商店预约
+              url: https://play.mc-gogo.com/events/mcgg2025wa/promotion/?code={{1}}&gpt=1&lang={{2}}&channel={{3}}
+      "02":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737104297907-6cpO3TxIbm.png
+            bodyText: "👏Just one more step! Tap to pre-register and assist them!\nAfter that, you can form your own team and win grand prizes!"
+            footerText:
+            action:
+              displayText: Pre-Register Now
+              url: https://play.mc-gogo.com/events/mcgg2025wa/promotion/?code={{1}}&gpt=1&lang={{2}}&channel={{3}}
+      "04":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737127236274-jK3Y0rgkeP.png
+            bodyText: "👏Tinggal 1 langkah lagi! Klik buat praregistrasi dan bantu temanmu!\nSetelah itu, kamu bisa bikin tim sendiri dan menangin hadiah utama!"
+            footerText:
+            action:
+              displayText: Praregistrasi
+              url: https://play.mc-gogo.com/events/mcgg2025wa/promotion/?code={{1}}&gpt=1&lang={{2}}&channel={{3}}
+    # 单人助力成功信息
+    helpTaskSingleSuccessMsg:
+      # 语言 todo 这里 12 、4 、67不太一样
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉恭喜，你的好友{{1}}接受了你的邀请。\n再邀请{{2}}位好友{{3}}"
+            footerText:
+            action:
+              displayText: 邀请好友
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang01?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Congratulations, your friend, {{1}}, has accepted your invitation.\nInvite {{2}} more{{3}}"
+            footerText:
+            action:
+              displayText: Invite Friends
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang02?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Selamat! Temanmu, {{1}}, sudah menerima undanganmu.\nUndang {{2}} teman lagi{{3}}"
+            footerText:
+            action:
+              displayText: Undang Teman
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang04?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+    # 三人助力完成信息
+    helpThreeOverMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉恭喜，你的好友{{1}}接受了你的邀请。\n你已邀请满{{2}}位好友，获得了🎁MCGG好运礼包！\n立即领取:{{3}}\n\n⭐再邀请{{4}}位好友，最高可得MLBB永久皮肤，并可参加抽取vivo手机！"
+            footerText:
+            action:
+              displayText: 邀请好友
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang01?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&mode=3&lang={{4}}&channel={{5}}
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Congratulations! Your friend, {{1}}, has accepted your invite.\nYou've successfully invited {{2}} friends and received an 🎁MCGG Lucky Pack!\nClaim it now at: {{3}}\n\n⭐Invite {{4}} more friends for a chance to win an MLBB permanent Skin and enter the Vivo phone draw!"
+            footerText:
+            action:
+              displayText: Invite Friends
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang02?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&mode=3&lang={{4}}&channel={{5}}
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Selamat, temanmu {{1}} sudah menerima undanganmu.\nKamu sudah mengundang {{2}} teman dan mendapat 🎁MCGG Lucky Pack!\nKlaim sekarang: {{3}}\n\n⭐Undang {{4}} teman lagi buat menangin Skin MLBB permanen dan raih kesempatan mendapat HP vivo!"
+            footerText:
+            action:
+              displayText: Undang Teman
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang04?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&mode=3&lang={{4}}&channel={{5}}
+    # 五人助力完成信息
+    helpFiveOverMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉恭喜，你的好友{{1}}接受了你的邀请。\n你已邀请满{{2}}位好友，获得🎁MLBB惊喜宝箱！\n立即领取:{{3}}\n\n⭐同时你触发了追加任务，再邀请{{4}}位好友，可额外获得MCGG惊喜礼包，并可参与抽取10 juta rupiah现金奖励！"
+            footerText:
+            action:
+              displayText: 邀请好友
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang01?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&mode=5&lang={{4}}&channel={{5}}
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Congratulations! Your friend, {{1}}, has accepted your invite.\nYou've successfully invited {{2}} friends and received an 🎁MCGG Surprise Pack!\nClaim it now at: {{3}}\n\n⭐You've unlocked a bonus task! Invite {{4}} more friends to earn an extra MCGG Surprise Pack and a chance to draw 10 juta rupiah cash prize!"
+            footerText:
+            action:
+              displayText: Invite Friends
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang02?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&mode=5&lang={{4}}&channel={{5}}
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Selamat, temanmu {{1}} sudah menerima undanganmu.\nKamu sudah mengundang {{2}} teman dan mendapat 🎁MLBB Surprise Chest!\nKlaim sekarang: {{3}}\n\n⭐Kamu membuka quest bonus! Undang {{4}} teman lagi buat menangin MCGG Surprise Pack dan kesempatan menangin hadiah uang tunai 10 juta rupiah!"
+            footerText:
+            action:
+              displayText: Undang Teman
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang04?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&mode=5&lang={{4}}&channel={{5}}
+    # 八人助力完成信息
+    helpEightOverMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉恭喜,你的好友{{1}}帮你助力成功!\n你已邀请满{{2}}位好友,获得🎁MCGG惊喜礼包!\n\n领取奖励：{{3}}\n感谢参与活动!你还可以分享活动信息给好友!"
+            footerText:
+            action:
+              displayText: 分享活动信息给好友
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang01?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&mode=8&lang={{4}}&channel={{5}}
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Congratulations! Your friend, {{1}}, has successfully assisted you!\nYou've invited {{2}} friends and received an 🎁MCGG Surprise Pack!\n\nClaim it now at: {{3}}\nThank you for participating in the event! Feel free to share the event with your friends!"
+            footerText:
+            action:
+              displayText: Share with Friends
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang02?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&mode=8&lang={{4}}&channel={{5}}
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "🎉Selamat, temanmu {{1}} berhasil membantumu!\nKamu sudah mengundang {{2}} teman dan mendapat 🎁MCGG Surprise Pack!\n\nKlaim hadiahmu: {{3}}\nTerima kasih sudah mengikuti event! Jangan lupa bagikan event ini ke teman-temanmu!"
+            footerText:
+            action:
+              displayText: Bagikan dengan Teman
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang04?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&mode=8&lang={{4}}&channel={{5}}
+    # 免费CDK消息
+    freeCdkMsg:
+      "01": #语言
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737104620349-mHuyE0zf1k.png
+            bodyText: "🎉恭喜你，触发幸运红包！有概率获得MLBB永久光启系列造型，赶紧去打开试试吧！"
+            footerText:
+            action:
+              displayText: 立刻开启
+              # todo 等待替换lang cdk两个字段
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/promotion/?gpt=1&lp=1&mode=1&cdk={{1}}&lang={{2}}&channel={{3}}
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737104620349-mHuyE0zf1k.png
+            bodyText: "🎉Congratulations! You got a Lucky Red Packet! You have a chance to win a permanent Lightborn Skin in MLBB. Hurry and open it now!"
+            footerText:
+            action:
+              displayText: Claim it now
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/promotion/?gpt=1&lp=1&mode=1&cdk={{1}}&lang={{2}}&channel={{3}}
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737104676365-JZp975inWg.png
+            bodyText: "🎉Selamat! Kamu mendapat Angpao Keberuntungan! Kamu punya kesempatan untuk memenangkan Skin Lightborn permanen di MLBB. Ayo buka sekarang!"
+            footerText:
+            action:
+              displayText: Klaim hadiahmu
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/promotion/?gpt=1&lp=1&mode=1&cdk={{1}}&lang={{2}}&channel={{3}}
+    renewFreeMsg: #免费续时
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: button
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108322597-5DYRiouhnW.png
+            bodyText: "【重要通知】由于您长时间没有活动进度，即将收不到[MCGG]的消息推送。\n\n为避免获取不到奖励，请尽快续订活动消息。"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: 续订活动消息
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: button
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108322597-5DYRiouhnW.png
+            bodyText: "[Important Notice] Due to prolonged inactivity, you will soon stop receiving MCGG message notifications.\n\nTo ensure you don’t miss out on rewards, please renew your event message subscription as soon as possible."
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: Resubscribe
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: button
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108213518-fxksM7HToc.png
+            bodyText: "[Pemberitahuan Penting] Karena tidak ada aktivitas dalam waktu lama, kamu akan berhenti menerima notifikasi pesan MCGG.\n\nSegera perbarui langganan pesan event agar tidak melewatkan hadiah."
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: Langganan Pesan
+    # 付费-续免费信息 todo mcgg不使用
+    payRenewFreeMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: button
+            bodyText: "【重要通知】奖励即将发完！\n\nMLBB：Teguh Bersama²  ]奖励库存所剩不多，你还差一点点即可获得下一档奖励，是否继续参与活动？"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: 继续参与活动
+          template:
+            name: mcgg2025wa_recall_zhcn
+            language:
+              code: zh_CN
+            components:
+              - type: header
+                parameters:
+                  - type: image
+                    image:
+                      id: "1645149076215261"
+        "winHoliday":
+          interactive:
+            type: button
+            bodyText: "【重要通知】奖励即将发完！\n\nMLBB：Teguh Bersama²  ]奖励库存所剩不多，你还差一点点即可获得下一档奖励，是否继续参与活动？"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: 继续参与活动
+          template:
+            name: mcgg2025wa_recall_zhcn
+            language:
+              code: zh_CN
+            components:
+              - type: header
+                parameters:
+                  - type: image
+                    image:
+                      id: "1645149076215261"
+        "notWin":
+          interactive:
+            type: button
+            bodyText: "【重要通知】奖励即将发完！\n\nMLBB：Teguh Bersama²  ]奖励库存所剩不多，你还差一点点即可获得下一档奖励，是否继续参与活动？"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: 继续参与活动
+          template:
+            name: mcgg2025wa_recall_zhcn
+            language:
+              code: zh_CN
+            components:
+              - type: header
+                parameters:
+                  - type: image
+                    image:
+                      id: "1645149076215261"
+      "02": #英语
+        "winNormal":
+          interactive:
+            type: button
+            bodyText: "[Important Notice] The reward is about to run out !\n\n[MLBB：Teguh Bersama²  ] There is not much rewards left, and you are just a little bit away to get the next reward. Do you want to continue to participate in the event?"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: Continue event
+          template:
+            name: mcgg2025wa_recall_en
+            language:
+              code: en
+            components:
+              - type: header
+                parameters:
+                  - type: image
+                    image:
+                      id: "546914904830441"
+        "winHoliday":
+          interactive:
+            type: button
+            bodyText: "[Important Notice] The reward is about to run out !\n\n[MLBB：Teguh Bersama²  ] There is not much rewards left, and you are just a little bit away to get the next reward. Do you want to continue to participate in the event?"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: Continue event
+          template:
+            name: mcgg2025wa_recall_en
+            language:
+              code: en
+            components:
+              - type: header
+                parameters:
+                  - type: image
+                    image:
+                      id: "546914904830441"
+        "notWin":
+          interactive:
+            type: button
+            bodyText: "[Important Notice] The reward is about to run out !\n\n[MLBB：Teguh Bersama²  ] There is not much rewards left, and you are just a little bit away to get the next reward. Do you want to continue to participate in the event?"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: Continue event
+          template:
+            name: mcgg2025wa_recall_en
+            language:
+              code: en
+            components:
+              - type: header
+                parameters:
+                  - type: image
+                    image:
+                      id: "546914904830441"
+      "04": #印尼语
+        "winNormal":
+          interactive:
+            type: button
+            bodyText: "[Notis Penting] Ganjaran Hampir Habis!\n\n[MLBB: Teguh Bersama²] Ganjaran semakin berkurang, dan anda hanya selangkah lagi untuk mendapatkan ganjaran seterusnya. \n\nAdakah anda mahu terus sertai acara ini?"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: Teruskan Sertai
+          template:
+            name: mcgg2025wa_recall_bm
+            language:
+              code: ml
+            components:
+              - type: header
+                parameters:
+                  - type: image
+                    image:
+                      id: "552480161004313"
+        "winHoliday":
+          interactive:
+            type: button
+            bodyText: "[Notis Penting] Ganjaran Hampir Habis!\n\n[MLBB: Teguh Bersama²] Ganjaran semakin berkurang, dan anda hanya selangkah lagi untuk mendapatkan ganjaran seterusnya. \n\nAdakah anda mahu terus sertai acara ini?"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: Teruskan Sertai
+          template:
+            name: mcgg2025wa_recall_bm
+            language:
+              code: ml
+            components:
+              - type: header
+                parameters:
+                  - type: image
+                    image:
+                      id: "552480161004313"
+        "notWin":
+          interactive:
+            type: button
+            bodyText: "[Notis Penting] Ganjaran Hampir Habis!\n\n[MLBB: Teguh Bersama²] Ganjaran semakin berkurang, dan anda hanya selangkah lagi untuk mendapatkan ganjaran seterusnya. \n\nAdakah anda mahu terus sertai acara ini?"
+            action:
+              buttons:
+                - type: reply
+                  reply:
+                    id: "1"
+                    title: Teruskan Sertai
+          template:
+            name: mcgg2025wa_recall_bm
+            language:
+              code: ml
+            components:
+              - type: header
+                parameters:
+                  - type: image
+                    image:
+                      id: "552480161004313"
+    # 催促成团消息
+    promoteClusteringMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108322597-5DYRiouhnW.png
+            bodyText: "【活动提醒】还差一点点，就能赢取限量奖励！\n🔥活动火爆，奖励所剩不多，赶紧邀请好友赢奖励吧！"
+            footerText:
+            action:
+              displayText: 邀请好友
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang01?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "02":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108322597-5DYRiouhnW.png
+            bodyText: "[Event Reminder] You’re just one step away from winning exclusive rewards!\n🔥 The event is running hot, and prizes are going fast! Invite friends now to claim your rewards!"
+            footerText:
+            action:
+              displayText: Invite Friends
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang02?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "04": #todo 印尼待提供
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737108213518-fxksM7HToc.png
+            bodyText: "[Pengingat Event] Tinggal selangkah lagi buat menangin hadiah terbatas!\n🔥 Event ini sedang populer dan hadiahnya semakin cepat habis! Undang teman sekarang buat dapatin hadiah!"
+            footerText:
+            action:
+              displayText: Undang Teman
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang04?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+    # 结束期-不能开团消息
+    endCanNotStartGroupMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "⏰活动已结束，感谢你的关注！\n现金、实物获奖名单将在3月1日公布在活动规则页面。\n如有疑问，请阅读活动规则。"
+            action:
+              displayText: 查看活动规则
+              url: https://share.mc-gogo.com/z8bdCmL
+      "02":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "⏰The event has ended. Thank you for your participation!\nWinners of cash and physical prizes will be announced on the Event Rules page on 3/1.\nIf you have any questions, please check the Event Rules."
+            action:
+              displayText: View Event Rules
+              url: https://share.mc-gogo.com/A4XruAT
+      "04":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "⏰Event sudah berakhir. Terima kasih sudah berpartisipasi!\nPemenang hadiah uang tunai dan hadiah fisik akan diumumkan di halaman Peraturan Event pada 01/03.\nSilakan baca Peraturan Event jika kamu punya pertanyaan."
+            action:
+              displayText: Lihat Aturan Event
+              url: https://share.mc-gogo.com/FAeb4jh
+    endCanNotHelpMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "⭐活动已结束，感谢你的关注！\n现金、实物获奖名单将在3月1日公布在活动规则页面。\n如有疑问，请阅读活动规则。"
+            action:
+              displayText: 查看活动规则
+              url: https://share.mc-gogo.com/z8bdCmL
+      "02":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "⭐The event has ended. Thank you for your participation!\nWinners of cash and physical prizes will be announced on the Event Rules page on 3/1.\nIf you have any questions, please check the Event Rules."
+            action:
+              displayText: View Event Rules
+              url: https://share.mc-gogo.com/A4XruAT
+      "04":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "⭐Event sudah berakhir. Terima kasih sudah mengikuti event!\nPemenang hadiah uang tunai dan hadiah fisik akan diumumkan di halaman Peraturan Event pada 01/03.\nSilakan baca Peraturan Event jika kamu punya pertanyaan."
+            action:
+              displayText: Lihat Aturan Event
+              url: https://share.mc-gogo.com/FAeb4jh
+    # 续订回复信息
+    renewFreeReplyMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737104297907-6cpO3TxIbm.png
+            bodyText: "继续邀请好友还有精彩大礼！\n\n邀请3位好友，最高可获得MCGG永久指挥官！\n邀请5位好友，最高可获得MLBB永久光启系列造型！\n邀请8位好友，最高可获得MCGG珍贵钻石！\n\n👇点击下方按钮，即可邀请好友！"
+            footerText:
+            action:
+              displayText: 邀请好友
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang01?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "02":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737104297907-6cpO3TxIbm.png
+            bodyText: "Keep inviting friends for amazing rewards!\n\nInvite 3 friends for a chance to win a permanent Commander in MCGG!\nInvite 5 friends for a chance to win a permanent Lightborn series Skin in MLBB!\nInvite 8 friends for a chance to win valuable MCGG Diamonds!\n\n👇Tap the button below to invite friends!"
+            footerText:
+            action:
+              displayText: Invite Friends
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang02?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+      "04":
+        "winNormal":
+          interactive:
+            type: cta_url
+            imageLink: https://akmweb.outweb.mc-gogo.com/1737127236274-jK3Y0rgkeP.png
+            bodyText: "Lanjut undang teman buat dapatin hadiah menarik!\n\nUndang 3 teman buat berkesempatan mendapat 1 Commander Permanen di MCGG!\nUndang 5 teman buat berkesempatan mendapat 1 Skin seri Lightborn permanen di MLBB!\nUndang 8 teman buat berkesempatan mendapat Diamond MCGG!\n\n👇Klik tombol di bawah buat undang teman!"
+            footerText:
+            action:
+              displayText: Undang Teman
+              shortLink: https://play.mc-gogo.com/events/mcgg2025wa/invite/invitationlang04?code={{1}}&gpt=8&waName={{2}}&helpTextId={{3}}&lang={{4}}&channel={{5}}
+    repeatHelpMsg:
+      # 语言
+      "01":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "❤️每个人只有一次帮他人助力机会，你已经帮{{1}}助力过，助力次数已消耗完，无法再帮他人助力。\n如有疑问，请查看活动规则。"
+            action:
+              displayText: 查看活动规则
+              url: https://share.mc-gogo.com/z8bdCmL
+      "02":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "❤️You can only assist one person, and you’ve already assisted {{1}}. Your assistance chance has been used up, so you cannot assist anyone else.\nIf you have any questions, please check the Event Rules."
+            action:
+              displayText: View Event Rules
+              url: https://share.mc-gogo.com/A4XruAT
+      "04":
+        "winNormal":
+          interactive:
+            type: cta_url
+            bodyText: "❤️Kamu hanya bisa membantu 1 orang, dan kamu sudah membantu  {{1}}. Kamu tidak bisa membantu lagi karena kesempatan bantuanmu habis.\nSilakan baca Peraturan Event jika kamu punya pertanyaan."
+            action:
+              displayText: Lihat Aturan Event
+              url: https://share.mc-gogo.com/FAeb4jh
